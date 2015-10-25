@@ -87,6 +87,7 @@ Eesti järvedel ei peatunud {3} hane!
     sisend = input('Kas the soovite jätkata(jah/ei)? ')
     if sisend != 'jah':
         print('Programm läks kinni!')
+        exit()
     
 
  
