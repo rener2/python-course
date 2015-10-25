@@ -26,7 +26,7 @@ while sisend == 'jah':
             nimedeList=input('''    Sisestage {0}. haneparve...
         ...nimi: '''.format(arv))
         while LiikmeteArvuList.isdigit()==False:
-            LiikmeteArvuList=input('    ...liikmete arv: ')
+            LiikmeteArvuList=input('        ...liikmete arv: ')
         nimed.append(nimedeList)
         liikmeteArv.append(LiikmeteArvuList)
         arv+=1
@@ -47,29 +47,29 @@ while sisend == 'jah':
         endlaJarv=''
         saadJarv=''
         ratvaJarv=''
-        while endlaJarv.isdigit() is False: 
+        while endlaJarv.isdigit() is False or int(endlaJarv) > int(liikmeteArv[indeks]): 
             endlaJarv=input("Mitu hane maandub '{0}' parvest Endla järvele? ".format(nimed[indeks]))
             if endlaJarv.isdigit() is True:
                 if int(endlaJarv) > int(liikmeteArv[indeks]):
-                    print('''   Parves '{0}' ei ole nii palju hanesid!
+                    print('''    Parves '{0}' ei ole nii palju hanesid!
     Parves '{0}' on {1} hane!
     Sisestage väiksem väärtus!'''.format(nimed[indeks],liikmeteArv[indeks]))
         lendabSaad=int(liikmeteArv[indeks])-int(endlaJarv)
         print('Endla järvele maandus {0} hane ja {1} lendab edasi'.format(endlaJarv,lendabSaad))
-        while saadJarv.isdigit() is False:
+        while saadJarv.isdigit() is False or int(saadJarv) > lendabSaad:
             saadJarv=input("Mitu hane maandub '{0}' parvest Saadjärvele? ".format(nimed[indeks]))
             if saadJarv.isdigit() is True:
                 if int(saadJarv) > lendabSaad:
-                    print('''   Parves '{0}' ei ole nii palju hanesid!
+                    print('''    Parves '{0}' ei ole nii palju hanesid!
     Parves '{0}' on {1} hane!
     Sisestage väiksem väärtus!'''.format(nimed[indeks],lendabSaad))
         lendabRatva=lendabSaad-int(saadJarv)
         print('Saadjärvele maandus {0} hane ja {1} lendab edasi'.format(saadJarv,lendabRatva))
-        while ratvaJarv.isdigit() is False:
+        while ratvaJarv.isdigit() is False or int(ratvaJarv) > lendabRatva:
             ratvaJarv=input("Mitu hane maandub'{0}'parvest Ratva järvele? ".format(nimed[indeks]))
             if ratvaJarv.isdigit() is True:
                 if int(ratvaJarv) > lendabRatva:
-                    print('''   Parves '{0}' ei ole nii palju hanesid!
+                    print('''    Parves '{0}' ei ole nii palju hanesid!
     Parves '{0}' on {1} hane!
     Sisestage väiksem väärtus!'''.format(nimed[indeks],lendabRatva))
         lendabEdasi=lendabRatva-int(ratvaJarv)
