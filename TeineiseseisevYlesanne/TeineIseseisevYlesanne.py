@@ -84,16 +84,19 @@ Ratva järvele on maandunud kokku {2} hane!
 Eesti järvedel ei peatunud {3} hane!
 '''.format(kokkuEndla,kokkuSaad,kokkuRatva,eiPeatunud))
 
-    loop = True
-    while loop == True:
-        sisend = input('Kas the soovite jätkata(jah/ei)? ')
-        if sisend == 'Ei':
-            print('Programm läks kinni!')
-            exit()
-        if sisend == 'jah':
-            print('')
-            loop = False
-            
+    sisend = input('Kas the soovite jätkata(jah/ei)? ')
+print('Programm läks kinni!')
+exit()
+ #   loop = True
+ #   while loop == True:
+ #       sisend = input('Kas the soovite jätkata(jah/ei)? ')
+ #       if sisend == 'Ei':
+ #           print('Programm läks kinni!')
+ #           exit()
+ #       if sisend == 'jah':
+ #           print('')
+ #           loop = False
+           
         
 
 
