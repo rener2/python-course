@@ -19,14 +19,14 @@ while sisend == 'jah':
     LiikmeteArvuList=''
     while mituParve != arv-1:
                 
-        nimedeList=input('''sisestage {0}.
-haneparve nimi:'''.format(arv))
+        nimedeList=input('''    Sisestage {0}. haneparve...
+        ...nimi: '''.format(arv))
 
         while kirjavahemargid(nimedeList)==True or nimedeList.isdigit() == True:
-            nimedeList=input('''sisestage {0}.
-haneparve nimi:'''.format(arv))
+            nimedeList=input('''    Sisestage {0}. haneparve...
+        ...nimi: '''.format(arv))
         while LiikmeteArvuList.isdigit()==False:
-            LiikmeteArvuList=input('liikmete arv: ')
+            LiikmeteArvuList=input('    ...liikmete arv: ')
         nimed.append(nimedeList)
         liikmeteArv.append(LiikmeteArvuList)
         arv+=1
@@ -35,7 +35,7 @@ haneparve nimi:'''.format(arv))
     indeks=0
     print('Lõunasse lähevad järgmised haneparved: ')
     while arv != indeks:
-        print('{0} ({1})'.format(nimed[indeks],liikmeteArv[indeks]))
+        print("    '{0}' ({1})".format(nimed[indeks],liikmeteArv[indeks]))
         indeks+=1
 	
     indeks=0
@@ -48,29 +48,29 @@ haneparve nimi:'''.format(arv))
         saadJarv=''
         ratvaJarv=''
         while endlaJarv.isdigit() is False: 
-            endlaJarv=input('Mitu hane maandub {0} parvest Endla järvele? '.format(nimed[indeks]))
+            endlaJarv=input("Mitu hane maandub '{0}' parvest Endla järvele? ".format(nimed[indeks]))
             if endlaJarv.isdigit() is True:
                 if int(endlaJarv) > int(liikmeteArv[indeks]):
-                    print('''   Parves {0} ei ole nii palju hanesid!
-    Parves {0} on {1} hane!
+                    print('''   Parves '{0}' ei ole nii palju hanesid!
+    Parves '{0}' on {1} hane!
     Sisestage väiksem väärtus!'''.format(nimed[indeks],liikmeteArv[indeks]))
         lendabSaad=int(liikmeteArv[indeks])-int(endlaJarv)
         print('Endla järvele maandus {0} hane ja {1} lendab edasi'.format(endlaJarv,lendabSaad))
         while saadJarv.isdigit() is False:
-            saadJarv=input('Mitu hane maandub {0} parvest Saadjärvele? '.format(nimed[indeks]))
+            saadJarv=input("Mitu hane maandub '{0}' parvest Saadjärvele? ".format(nimed[indeks]))
             if saadJarv.isdigit() is True:
                 if int(saadJarv) > lendabSaad:
-                    print('''   Parves {0} ei ole nii palju hanesid!
-    Parves {0} on {1} hane!
+                    print('''   Parves '{0}' ei ole nii palju hanesid!
+    Parves '{0}' on {1} hane!
     Sisestage väiksem väärtus!'''.format(nimed[indeks],lendabSaad))
         lendabRatva=lendabSaad-int(saadJarv)
         print('Saadjärvele maandus {0} hane ja {1} lendab edasi'.format(saadJarv,lendabRatva))
         while ratvaJarv.isdigit() is False:
-            ratvaJarv=input('Mitu hane maandub {0} parvest Ratva järvele? '.format(nimed[indeks]))
+            ratvaJarv=input("Mitu hane maandub'{0}'parvest Ratva järvele? ".format(nimed[indeks]))
             if ratvaJarv.isdigit() is True:
                 if int(ratvaJarv) > lendabRatva:
-                    print('''   Parves {0} ei ole nii palju hanesid!
-    Parves {0} on {1} hane!
+                    print('''   Parves '{0}' ei ole nii palju hanesid!
+    Parves '{0}' on {1} hane!
     Sisestage väiksem väärtus!'''.format(nimed[indeks],lendabRatva))
         lendabEdasi=lendabRatva-int(ratvaJarv)
         print('Ratvajärvele maandus {0} hane ja {1} hane lendab edasi'.format(ratvaJarv,lendabEdasi))
@@ -80,10 +80,12 @@ haneparve nimi:'''.format(arv))
         kokkuEndla=kokkuEndla+int(endlaJarv)
     liikmeteArv=map(int,liikmeteArv)
     eiPeatunud=sum(liikmeteArv)-(kokkuRatva+kokkuSaad+kokkuEndla)
-    print('''Endla järvele on maandunud kokku {0} hane!
-    Saadjärvele on maandunud kokku {1} hane!
-    Ratva järvele on maandunud kokku {2} hane!
-    Eesti järvedel ei peatunud {3} hane!'''.format(kokkuEndla,kokkuSaad,kokkuRatva,eiPeatunud))
+    print('''
+Endla järvele on maandunud kokku {0} hane!
+Saadjärvele on maandunud kokku {1} hane!
+Ratva järvele on maandunud kokku {2} hane!
+Eesti järvedel ei peatunud {3} hane!
+'''.format(kokkuEndla,kokkuSaad,kokkuRatva,eiPeatunud))
     
     sisend=input('Kas te soovite jätkata(jah/ei)? ')
     
