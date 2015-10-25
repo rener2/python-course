@@ -1,5 +1,4 @@
 import string
-import sys
 def kirjavahemargid(x):
     a=bool()
     for char in x:
@@ -18,6 +17,20 @@ def haneparvedjaliikmed(x1,x2,x3,x4,x5,x6):
         x3.append(x4)
         x2+=1
         x4=''
+jarved=('Endla järv','Saadjärv','Ratva järv')
+def parveLend(y1,y2,y3,y4,y5):
+
+    while y1.isdigit() is False or int(y1)>int(y2):
+        y1=input("Mitu hane maandub '{0}' parvest {1}? ".format(y3[indeks],y5))
+        if y1.isdigit() is True:
+            if int(y1)> int(y2):
+                print('''    Parves '{0}' ei ole nii palju hanesid!
+    Parves '{0}' on {1} hane!
+    Sisestage väiksem väärtus!'''.format(y3[indeks],y2))
+    return y1
+
+        
+
 
     
 sisend = 'jah'
@@ -32,7 +45,7 @@ while sisend == 'jah':
     nimedeList='1'
     LiikmeteArvuList=''
     
-    hanedparvedjaliikmed(mituParve,arv,liikmeteArv,liikmeteArvuList,nimed,nimedeList)
+    haneparvedjaliikmed(mituParve,arv,liikmeteArv,LiikmeteArvuList,nimed,nimedeList)
     
     arv=len(nimed)
     indeks=0
@@ -48,33 +61,23 @@ while sisend == 'jah':
         endlaJarv=''
         saadJarv=''
         ratvaJarv=''
-        while endlaJarv.isdigit() is False or int(endlaJarv) > int(liikmeteArv[indeks]): 
-            endlaJarv=input("Mitu hane maandub '{0}' parvest Endla järvele? ".format(nimed[indeks]))
-            if endlaJarv.isdigit() is True:
-                if int(endlaJarv) > int(liikmeteArv[indeks]):
-                    print('''    Parves '{0}' ei ole nii palju hanesid!
-    Parves '{0}' on {1} hane!
-    Sisestage väiksem väärtus!'''.format(nimed[indeks],liikmeteArv[indeks]))
+        lendabSaad=0
+        lendabRatva=0
+        lendabEdasi=0
+
+        endlaJarv=parveLend(endlaJarv,liikmeteArv[indeks],nimed,lendabSaad,'Endla järvele')
         lendabSaad=int(liikmeteArv[indeks])-int(endlaJarv)
         print('    Endla järvele maandus {0} hane ja {1} lendab edasi'.format(endlaJarv,lendabSaad))
-        while saadJarv.isdigit() is False or int(saadJarv) > lendabSaad:
-            saadJarv=input("Mitu hane maandub '{0}' parvest Saadjärvele? ".format(nimed[indeks]))
-            if saadJarv.isdigit() is True:
-                if int(saadJarv) > lendabSaad:
-                    print('''    Parves '{0}' ei ole nii palju hanesid!
-    Parves '{0}' on {1} hane!
-    Sisestage väiksem väärtus!'''.format(nimed[indeks],lendabSaad))
-        lendabRatva=lendabSaad-int(saadJarv)
+        
+        saadJarv=parveLend(saadJarv,lendabSaad,nimed,lendabRatva,'Saadjärvele')
+        lendabRatva=int(lendabSaad)-int(saadJarv)
         print('    Saadjärvele maandus {0} hane ja {1} lendab edasi'.format(saadJarv,lendabRatva))
-        while ratvaJarv.isdigit() is False or int(ratvaJarv) > lendabRatva:
-            ratvaJarv=input("Mitu hane maandub'{0}'parvest Ratva järvele? ".format(nimed[indeks]))
-            if ratvaJarv.isdigit() is True:
-                if int(ratvaJarv) > lendabRatva:
-                    print('''    Parves '{0}' ei ole nii palju hanesid!
-    Parves '{0}' on {1} hane!
-    Sisestage väiksem väärtus!'''.format(nimed[indeks],lendabRatva))
-        lendabEdasi=lendabRatva-int(ratvaJarv)
-        print('    Ratvajärvele maandus {0} hane ja {1} hane lendab edasi'.format(ratvaJarv,lendabEdasi))
+        
+
+        ratvaJarv=parveLend(ratvaJarv,lendabRatva,nimed,lendabEdasi,'Ratva järvele')
+        lendabEdasi=int(lendabRatva)-int(ratvaJarv)
+        print('    Ratva järvele maandus {0} hane ja {1} hane lendab edasi'.format(ratvaJarv,lendabEdasi))
+
         indeks+=1
         kokkuRatva=kokkuRatva+int(ratvaJarv)
         kokkuSaad=kokkuSaad+int(saadJarv)
@@ -89,8 +92,9 @@ Eesti järvedel ei peatunud {3} hane!
 '''.format(kokkuEndla,kokkuSaad,kokkuRatva,eiPeatunud))
 
     sisend = input('Kas the soovite jätkata(jah/ei)? ')
+    if sisend == 'jah':
+        print('')
 print('Programm läks kinni!')
-sys.exit
     
     
     
