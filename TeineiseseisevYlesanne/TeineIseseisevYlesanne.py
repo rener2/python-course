@@ -92,6 +92,7 @@ Eesti järvedel ei peatunud {3} hane!
     if sisend == 'jah':
         print('')
 print('Programm läks kinni!')
+
     
     
     
