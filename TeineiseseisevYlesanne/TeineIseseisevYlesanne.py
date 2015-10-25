@@ -91,10 +91,10 @@ while sisend == 'jah':
 
 
     sisend = input('Kas the soovite jätkata(jah/ei)? ')
- #   if sisend == 'jah':
- #       print('')
-#print('Programm läks kinni!')
-#sys.exit
+    if sisend == 'jah':
+        print('')
+print('Programm läks kinni!')
+sys.exit
 
     
     
