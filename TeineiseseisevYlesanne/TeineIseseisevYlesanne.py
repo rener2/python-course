@@ -1,4 +1,4 @@
-
+import string
 def kirjavahemargid(x):
     a=bool()
     for char in x:
@@ -6,8 +6,8 @@ def kirjavahemargid(x):
     return a
  
 sisend = 'jah'
-while sisend == 'jah':
-    import string
+while sisend == 'jah' or 'Jah':
+    print('\n')
     mituParve=''
     while not mituParve.isdigit():
         mituParve = input('Mitu haneparve on nähtud? ')
@@ -88,9 +88,12 @@ Eesti järvedel ei peatunud {3} hane!
 '''.format(kokkuEndla,kokkuSaad,kokkuRatva,eiPeatunud))
     
     sisend=input('Kas te soovite jätkata(jah/ei)? ')
-    
-print('Programm läks kinni!')
-exit
+    while sisend != 'jah' or 'ei' or 'Ei' or 'Jah':
+        sisend = input('Kas te soovite jätkata(jah/ei)? ')
+    if sisend == 'ei' or 'Ei':
+        print('Programm läks kinni!')
+        exit()
+        
 
 
 
