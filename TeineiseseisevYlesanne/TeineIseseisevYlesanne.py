@@ -85,18 +85,11 @@ Eesti järvedel ei peatunud {3} hane!
 '''.format(kokkuEndla,kokkuSaad,kokkuRatva,eiPeatunud))
 
     sisend = input('Kas the soovite jätkata(jah/ei)? ')
-print('Programm läks kinni!')
-exit()
- #   loop = True
- #   while loop == True:
- #       sisend = input('Kas the soovite jätkata(jah/ei)? ')
- #       if sisend == 'Ei':
- #           print('Programm läks kinni!')
- #           exit()
- #       if sisend == 'jah':
- #           print('')
- #           loop = False
- #
+    if sisend != 'jah':
+        print('Programm läks kinni!')
+        
+
+ 
            
         
 
