@@ -27,11 +27,16 @@ def parveLend(y1,y2,y3,y4,y5):
     Parves '{0}' on {1} hane!
     Sisestage väiksem väärtus!'''.format(y3[indeks],y2))
     return y1
-def lounasseLahevad():
-    print('Lõunasse lähevad järgmised haneparved: ')
-    while arv != indeks:
-        print("    '{0}' ({1})".format(nimed[indeks],liikmeteArv[indeks]))
-        indeks+=1
+def kokkuvote(x,y,z,t):
+    t=map(int,t)
+    eiPeatunud=sum(t)-(x+y+z)
+    c=print('''
+Endla järvele on maandunud kokku {0} hane!
+Saadjärvele on maandunud kokku {1} hane!
+Ratva järvele on maandunud kokku {2} hane!
+Eesti järvedel ei peatunud {3} hane!'''.format(x,y,z,eiPeatunud))
+    return c
+    
     
 
 sisend = 'jah'
@@ -82,14 +87,8 @@ while sisend == 'jah':
         kokkuRatva=kokkuRatva+int(ratvaJarv)
         kokkuSaad=kokkuSaad+int(saadJarv)
         kokkuEndla=kokkuEndla+int(endlaJarv)
-    liikmeteArv=map(int,liikmeteArv)
-    eiPeatunud=sum(liikmeteArv)-(kokkuRatva+kokkuSaad+kokkuEndla)
-    print('''
-Endla järvele on maandunud kokku {0} hane!
-Saadjärvele on maandunud kokku {1} hane!
-Ratva järvele on maandunud kokku {2} hane!
-Eesti järvedel ei peatunud {3} hane!
-'''.format(kokkuEndla,kokkuSaad,kokkuRatva,eiPeatunud))
+    kokkuvote(kokkuEndla,kokkuSaad,kokkuRatva,liikmeteArv)
+
 
     sisend = input('Kas the soovite jätkata(jah/ei)? ')
     if sisend == 'jah':
