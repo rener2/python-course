@@ -17,9 +17,7 @@ def haneparvedjaliikmed(x1,x2,x3,x4,x5,x6):
         x3.append(x4)
         x2+=1
         x4=''
-jarved=('Endla järv','Saadjärv','Ratva järv')
 def parveLend(y1,y2,y3,y4,y5):
-
     while y1.isdigit() is False or int(y1)>int(y2):
         y1=input("Mitu hane maandub '{0}' parvest {1}? ".format(y3[indeks],y5))
         if y1.isdigit() is True:
@@ -73,7 +71,6 @@ while sisend == 'jah':
         lendabRatva=int(lendabSaad)-int(saadJarv)
         print('    Saadjärvele maandus {0} hane ja {1} lendab edasi'.format(saadJarv,lendabRatva))
         
-
         ratvaJarv=parveLend(ratvaJarv,lendabRatva,nimed,lendabEdasi,'Ratva järvele')
         lendabEdasi=int(lendabRatva)-int(ratvaJarv)
         print('    Ratva järvele maandus {0} hane ja {1} hane lendab edasi'.format(ratvaJarv,lendabEdasi))
