@@ -1,3 +1,4 @@
+#-----------------------Funktsioonid---------------------------
 def kirjavahemargid(x):
     a=False
     for char in x:
@@ -21,13 +22,13 @@ def sisendkunitaisarv(nimi,kysimus):
     nimi = int(nimi)
     return nimi
     
-    
+#-----------------------------Kood---------------------------   
 sisend = 'jah'
 while sisend == 'jah':
     import string
 
     nimi=''
-    mituParve=sisendkunitaisarv(nimi,'Mitu haneparve on nähtud?: ')
+    mituParve=sisendkunitaisarv(nimi,'Mitu haneparve on nähtud? ')
     
     arv=1
     nimed=list()
@@ -35,13 +36,13 @@ while sisend == 'jah':
     nimedeList='1'
     LiikmeteArvuList=''
     while mituParve != arv-1:
-        nimedeList=input('''\nSisestage {0}.
-haneparve nimi:'''.format(arv))  
+        nimedeList=input('''\nSisestage {0}. haneparve...
+...nimi:'''.format(arv))  
         while kirjavahemargid(nimedeList)==True or taisarvulinevaartus(nimedeList)==True:
-            nimedeList=input('''\nSisestage {0}.
-haneparve nimi:'''.format(arv))
+            nimedeList=input('''\nSisestage {0}. haneparve...
+...nimi:'''.format(arv))
         while taisarvulinevaartus(LiikmeteArvuList)==False:
-            LiikmeteArvuList=input('Liikmete arv: ')
+            LiikmeteArvuList=input('...liikmete arv: ')
         nimed.append(nimedeList)
         liikmeteArv.append(LiikmeteArvuList)
         arv+=1
@@ -83,7 +84,7 @@ Sisestage väiksem väärtus!'''.format(nimed[indeks],lendabSaad))
         lendabRatva=lendabSaad-int(saadJarv)
         print('Saadjärvele maandus {0} hane ja {1} lendab edasi.\n'.format(saadJarv,lendabRatva))
         
-        while taisarvulinevaartus(ratvaJarv) is False or int(ratvaJarv)>lendabSaad:
+        while taisarvulinevaartus(ratvaJarv) is False or int(ratvaJarv)>lendabRatva:
             ratvaJarv=input('Mitu hane maandub {0} parvest Ratva järvele? '.format(nimed[indeks]))
             if taisarvulinevaartus(ratvaJarv) is True:
                 if int(ratvaJarv) > lendabRatva:
@@ -102,6 +103,8 @@ Sisestage väiksem väärtus!'''.format(nimed[indeks],lendabRatva))
     sisend=input('\nKas te soovite jätkata(jah/ei)? \n')
 print('\nSüsteem läks kinni!')
 exit
+
+
 
 
 
