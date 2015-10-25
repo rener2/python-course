@@ -52,7 +52,7 @@ while sisend == 'jah':
     Parves '{0}' on {1} hane!
     Sisestage väiksem väärtus!'''.format(nimed[indeks],liikmeteArv[indeks]))
         lendabSaad=int(liikmeteArv[indeks])-int(endlaJarv)
-        print('Endla järvele maandus {0} hane ja {1} lendab edasi'.format(endlaJarv,lendabSaad))
+        print('    Endla järvele maandus {0} hane ja {1} lendab edasi'.format(endlaJarv,lendabSaad))
         while saadJarv.isdigit() is False or int(saadJarv) > lendabSaad:
             saadJarv=input("Mitu hane maandub '{0}' parvest Saadjärvele? ".format(nimed[indeks]))
             if saadJarv.isdigit() is True:
@@ -61,7 +61,7 @@ while sisend == 'jah':
     Parves '{0}' on {1} hane!
     Sisestage väiksem väärtus!'''.format(nimed[indeks],lendabSaad))
         lendabRatva=lendabSaad-int(saadJarv)
-        print('Saadjärvele maandus {0} hane ja {1} lendab edasi'.format(saadJarv,lendabRatva))
+        print('    Saadjärvele maandus {0} hane ja {1} lendab edasi'.format(saadJarv,lendabRatva))
         while ratvaJarv.isdigit() is False or int(ratvaJarv) > lendabRatva:
             ratvaJarv=input("Mitu hane maandub'{0}'parvest Ratva järvele? ".format(nimed[indeks]))
             if ratvaJarv.isdigit() is True:
@@ -70,7 +70,7 @@ while sisend == 'jah':
     Parves '{0}' on {1} hane!
     Sisestage väiksem väärtus!'''.format(nimed[indeks],lendabRatva))
         lendabEdasi=lendabRatva-int(ratvaJarv)
-        print('Ratvajärvele maandus {0} hane ja {1} hane lendab edasi'.format(ratvaJarv,lendabEdasi))
+        print('    Ratvajärvele maandus {0} hane ja {1} hane lendab edasi'.format(ratvaJarv,lendabEdasi))
         indeks+=1
         kokkuRatva=kokkuRatva+int(ratvaJarv)
         kokkuSaad=kokkuSaad+int(saadJarv)
@@ -83,16 +83,20 @@ Saadjärvele on maandunud kokku {1} hane!
 Ratva järvele on maandunud kokku {2} hane!
 Eesti järvedel ei peatunud {3} hane!
 '''.format(kokkuEndla,kokkuSaad,kokkuRatva,eiPeatunud))
-    
-    sisend=input('Kas te soovite jätkata(jah/ei)? ')
-    while sisend != 'jah' or 'Ei':
-        sisend = input('Kas te soovite jätkata(jah/ei)? ')
-    if sisend == 'Ei':
-        print('Programm läks kinni!')
-        exit()
-    if sisend == 'jah':
-        print('\n')
-    
+
+    loop = True
+    while loop == True:
+        sisend = input('Kas the soovite jätkata(jah/ei)? ')
+        if sisend == 'Ei':
+            print('Programm läks kinni!')
+            exit()
+        if sisend == 'jah':
+            print('')
+            loop = False
+            
+        
+
+
         
 
 
