@@ -1,5 +1,6 @@
 import string
 import sys
+#---------------------------------------------------------------------------------------------
 def kirjavahemargid(x):
     a=bool()
     for char in x:
@@ -12,7 +13,7 @@ def haneparvedjaliikmed(x1,x2,x3,x4,x5,x6):
         while kirjavahemargid(x6)==True or x6.isdigit() == True:
             x6=input('''    Sisestage {0}. haneparve...
         ...nimi: '''.format(x2))
-        while x4.isdigit()==False:
+        while x4.isdigit()==False or x4==0:
             x4=input('        ...liikmete arv: ')
         x5.append(x6)
         x3.append(x4)
@@ -36,9 +37,7 @@ Saadjärvele on maandunud kokku {1} hane!
 Ratva järvele on maandunud kokku {2} hane!
 Eesti järvedel ei peatunud {3} hane!'''.format(x,y,z,eiPeatunud))
     return c
-    
-    
-
+#----------------------------------------------------------------------------------------------    
 sisend = 'jah'
 while sisend == 'jah':
     mituParve=''
@@ -88,7 +87,6 @@ while sisend == 'jah':
         kokkuSaad=kokkuSaad+int(saadJarv)
         kokkuEndla=kokkuEndla+int(endlaJarv)
     kokkuvote(kokkuEndla,kokkuSaad,kokkuRatva,liikmeteArv)
-
 
     sisend = input('Kas the soovite jätkata(jah/ei)? ')
     if sisend == 'jah':
