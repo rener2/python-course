@@ -92,7 +92,7 @@ while sisend == 'jah':
     if sisend == 'jah':
         print('')
 print('Programm läks kinni!')
-sys.exit
+exit()
 
     
     
