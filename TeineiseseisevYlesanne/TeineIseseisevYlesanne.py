@@ -5,7 +5,21 @@ def kirjavahemargid(x):
     for char in x:
         if char in string.punctuation: a=True
     return a
+def haneparvedjaliikmed(x1,x2,x3,x4,x5,x6):
+    while x1 != x2-1:
+        x6=input('''    Sisestage {0}. haneparve...
+        ...nimi: '''.format(x2))
+        while kirjavahemargid(x6)==True or x6.isdigit() == True:
+            x6=input('''    Sisestage {0}. haneparve...
+        ...nimi: '''.format(x2))
+        while x4.isdigit()==False:
+            x4=input('        ...liikmete arv: ')
+        x5.append(x6)
+        x3.append(x4)
+        x2+=1
+        x4=''
 
+    
 sisend = 'jah'
 while sisend == 'jah':
     mituParve=''
@@ -17,27 +31,16 @@ while sisend == 'jah':
     liikmeteArv=list()
     nimedeList='1'
     LiikmeteArvuList=''
-    while mituParve != arv-1:
-        nimedeList=input('''    Sisestage {0}. haneparve...
-        ...nimi: '''.format(arv))
-        while kirjavahemargid(nimedeList)==True or nimedeList.isdigit() == True:
-            nimedeList=input('''    Sisestage {0}. haneparve...
-        ...nimi: '''.format(arv))
-        while LiikmeteArvuList.isdigit()==False:
-            LiikmeteArvuList=input('        ...liikmete arv: ')
-        nimed.append(nimedeList)
-        liikmeteArv.append(LiikmeteArvuList)
-        arv+=1
-        LiikmeteArvuList=''
+    
+    hanedparvedjaliikmed(mituParve,arv,liikmeteArv,liikmeteArvuList,nimed,nimedeList)
+    
     arv=len(nimed)
     indeks=0
     print('Lõunasse lähevad järgmised haneparved: ')
     while arv != indeks:
         print("    '{0}' ({1})".format(nimed[indeks],liikmeteArv[indeks]))
-        indeks+=1
-	
+        indeks+=1	
     indeks=0
-	
     kokkuRatva=0
     kokkuEndla=0
     kokkuSaad=0
@@ -86,9 +89,8 @@ Eesti järvedel ei peatunud {3} hane!
 '''.format(kokkuEndla,kokkuSaad,kokkuRatva,eiPeatunud))
 
     sisend = input('Kas the soovite jätkata(jah/ei)? ')
-  #  if sisend != 'jah':
 print('Programm läks kinni!')
-  #      sys.exit 
+sys.exit
     
     
     
