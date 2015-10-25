@@ -1,10 +1,11 @@
 import string
+import sys
 def kirjavahemargid(x):
     a=bool()
     for char in x:
         if char in string.punctuation: a=True
     return a
- 
+
 sisend = 'jah'
 while sisend == 'jah':
     mituParve=''
@@ -87,7 +88,9 @@ Eesti järvedel ei peatunud {3} hane!
     sisend = input('Kas the soovite jätkata(jah/ei)? ')
     if sisend != 'jah':
         print('Programm läks kinni!')
-        exit
+        sys.exit 
+    
+    
     
 
  
