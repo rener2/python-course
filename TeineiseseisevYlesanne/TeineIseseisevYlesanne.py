@@ -1,4 +1,5 @@
 import string
+#------------------------Funktsioonid--------------------------------------------
 def kirjavahemargid(x):
     a=bool()
     for char in x:
@@ -27,10 +28,7 @@ def parveLend(y1,y2,y3,y4,y5):
     Sisestage väiksem väärtus!'''.format(y3[indeks],y2))
     return y1
 
-        
-
-
-    
+#-------------------------------------------Kood------------------------------------   
 sisend = 'jah'
 while sisend == 'jah':
     mituParve=''
@@ -89,8 +87,8 @@ Eesti järvedel ei peatunud {3} hane!
 '''.format(kokkuEndla,kokkuSaad,kokkuRatva,eiPeatunud))
 
     sisend = input('Kas the soovite jätkata(jah/ei)? ')
-    if sisend == 'jah':
-        print('')
+#    if sisend == 'jah':
+#        print('')
 print('Programm läks kinni!')
 
     
