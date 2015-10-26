@@ -23,8 +23,9 @@ def parveLend(y1,y2,y3,y4,y5):
     while y1.isdigit() is False or int(y1)>int(y2):
         y1=input("Mitu hane maandub '{0}' parvest {1}? ".format(y3[indeks],y5))
         if y1.isdigit() is True:
+    
             if int(y1)> int(y2):
-                print('''}\n    Parves '{0}' ei ole nii palju hanesid!
+                print('''\n    Parves '{0}' ei ole nii palju hanesid!
     Parves '{0}' on {1} hane!
     Sisestage väiksem väärtus!'''.format(y3[indeks],y2))
     return y1
