@@ -54,7 +54,7 @@ while sisend == 'jah':
     
     arv=len(nimed)
     indeks=0
-    print('Lõunasse lähevad järgmised haneparved: ')
+    print('\nLõunasse lähevad järgmised haneparved: ')
     while arv != indeks:
         print("    '{0}' ({1})".format(nimed[indeks],liikmeteArv[indeks]))
         indeks+=1	
