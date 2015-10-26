@@ -24,9 +24,9 @@ def parveLend(y1,y2,y3,y4,y5):
         y1=input("Mitu hane maandub '{0}' parvest {1}? ".format(y3[indeks],y5))
         if y1.isdigit() is True:
             if int(y1)> int(y2):
-                print('''Parves '{0}' ei ole nii palju hanesid!
-Parves '{0}' on {1} hane!
-Sisestage väiksem väärtus!'''.format(y3[indeks],y2))
+                print('''}\n    Parves '{0}' ei ole nii palju hanesid!
+    Parves '{0}' on {1} hane!
+    Sisestage väiksem väärtus!'''.format(y3[indeks],y2))
     return y1
 def kokkuvote(x,y,z,t):
     t=map(int,t)
@@ -56,7 +56,7 @@ while sisend == 'jah':
     indeks=0
     print('Lõunasse lähevad järgmised haneparved: ')
     while arv != indeks:
-        print("'{0}' ({1})".format(nimed[indeks],liikmeteArv[indeks]))
+        print("    '{0}' ({1})".format(nimed[indeks],liikmeteArv[indeks]))
         indeks+=1	
     indeks=0
     kokkuRatva=0
@@ -72,15 +72,15 @@ while sisend == 'jah':
 
         endlaJarv=parveLend(endlaJarv,liikmeteArv[indeks],nimed,lendabSaad,'Endla järvele')
         lendabSaad=int(liikmeteArv[indeks])-int(endlaJarv)
-        print('Endla järvele maandus {0} hane ja {1} lendab edasi!'.format(endlaJarv,lendabSaad))
+        print('    Endla järvele maandus {0} hane ja {1} lendab edasi!'.format(endlaJarv,lendabSaad))
         
         saadJarv=parveLend(saadJarv,lendabSaad,nimed,lendabRatva,'Saadjärvele')
         lendabRatva=int(lendabSaad)-int(saadJarv)
-        print('Saadjärvele maandus {0} hane ja {1} lendab edasi!'.format(saadJarv,lendabRatva))
+        print('    Saadjärvele maandus {0} hane ja {1} lendab edasi!'.format(saadJarv,lendabRatva))
         
         ratvaJarv=parveLend(ratvaJarv,lendabRatva,nimed,lendabEdasi,'Ratva järvele')
         lendabEdasi=int(lendabRatva)-int(ratvaJarv)
-        print('Ratva järvele maandus {0} hane ja {1} hane lendab edasi!'.format(ratvaJarv,lendabEdasi))
+        print('    Ratva järvele maandus {0} hane ja {1} hane lendab edasi!'.format(ratvaJarv,lendabEdasi))
 
         indeks+=1
         kokkuRatva=kokkuRatva+int(ratvaJarv)
