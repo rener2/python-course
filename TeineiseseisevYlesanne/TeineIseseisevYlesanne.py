@@ -10,10 +10,10 @@ def haneparvedjaliikmed(x1,x2,x3,x4,x5,x6):
     while x1 != x2-1:
         x6=input('''    Sisestage {0}. haneparve...
         ...nimi: '''.format(x2))
-        while kirjavahemargid(x6)==True or x6.isdigit() == True:
+        while kirjavahemargid(x6)==True or x6.isdigit() == True or x6 == '':
             x6=input('''    Sisestage {0}. haneparve...
         ...nimi: '''.format(x2))
-        while x4.isdigit()==False or x4==0:
+        while x4.isdigit()==False or x4=='0':
             x4=input('        ...liikmete arv: ')
         x5.append(x6)
         x3.append(x4)
