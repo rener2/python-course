@@ -31,10 +31,10 @@ def parveLend(y1,y2,y3,y4,y5):
 def kokkuvote(x,y,z,t):
     t=map(int,t)
     eiPeatunud=sum(t)-(x+y+z)
-    c=print('''Endla järvele on maandunud kokku {0} hane!
+    c=print('''\nEndla järvele on maandunud kokku {0} hane!
 Saadjärvele on maandunud kokku {1} hane!
 Ratva järvele on maandunud kokku {2} hane!
-Eesti järvedel ei peatunud {3} hane!'''.format(x,y,z,eiPeatunud))
+Eesti järvedel ei peatunud {3} hane!\n'''.format(x,y,z,eiPeatunud))
     return c
 #----------------------------------------------------------------------------------------------    
 sisend = 'jah'
