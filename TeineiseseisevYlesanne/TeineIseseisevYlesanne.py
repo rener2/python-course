@@ -1,5 +1,5 @@
 import string
-#import sys
+import sys
 #---------------------------------------------------------------------------------------------
 def kirjavahemargid(x):
     a=bool()
