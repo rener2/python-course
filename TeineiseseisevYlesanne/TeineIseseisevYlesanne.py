@@ -1,5 +1,5 @@
 import string
-import sys
+#import sys
 #---------------------------------------------------------------------------------------------
 def kirjavahemargid(x):
     a=bool()
@@ -39,6 +39,7 @@ Eesti järvedel ei peatunud {3} hane!'''.format(x,y,z,eiPeatunud))
     return c
 #----------------------------------------------------------------------------------------------    
 sisend = 'jah'
+
 while sisend == 'jah':
     mituParve=''
     while not mituParve.isdigit():
@@ -72,15 +73,15 @@ while sisend == 'jah':
 
         endlaJarv=parveLend(endlaJarv,liikmeteArv[indeks],nimed,lendabSaad,'Endla järvele')
         lendabSaad=int(liikmeteArv[indeks])-int(endlaJarv)
-        print('    Endla järvele maandus {0} hane ja {1} lendab edasi'.format(endlaJarv,lendabSaad))
+        print('    Endla järvele maandus {0} hane ja {1} lendab edasi!'.format(endlaJarv,lendabSaad))
         
         saadJarv=parveLend(saadJarv,lendabSaad,nimed,lendabRatva,'Saadjärvele')
         lendabRatva=int(lendabSaad)-int(saadJarv)
-        print('    Saadjärvele maandus {0} hane ja {1} lendab edasi'.format(saadJarv,lendabRatva))
+        print('    Saadjärvele maandus {0} hane ja {1} lendab edasi!'.format(saadJarv,lendabRatva))
         
         ratvaJarv=parveLend(ratvaJarv,lendabRatva,nimed,lendabEdasi,'Ratva järvele')
         lendabEdasi=int(lendabRatva)-int(ratvaJarv)
-        print('    Ratva järvele maandus {0} hane ja {1} hane lendab edasi'.format(ratvaJarv,lendabEdasi))
+        print('    Ratva järvele maandus {0} hane ja {1} hane lendab edasi!'.format(ratvaJarv,lendabEdasi))
 
         indeks+=1
         kokkuRatva=kokkuRatva+int(ratvaJarv)
@@ -92,7 +93,7 @@ while sisend == 'jah':
     if sisend == 'jah':
         print('')
 print('Programm läks kinni!')
-sys.exit
+#sys.exit
 
     
     
