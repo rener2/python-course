@@ -10,7 +10,7 @@ def haneparvedjaliikmed(x1,x2,x3,x4,x5,x6):
     while x1 != x2-1:
         x6=input('''    Sisestage {0}. haneparve...
         ...nimi: '''.format(x2))
-        while kirjavahemargid(x6)==True or x6.isdigit() == True or x6 == '':
+        while kirjavahemargid(x6)==True or x6.isdigit() == True or '' in x6:
             x6=input('''    Sisestage {0}. haneparve...
         ...nimi: '''.format(x2))
         while x4.isdigit()==False or x4=='0':
@@ -25,7 +25,7 @@ def parveLend(y1,y2,y3,y4,y5):
         if y1.isdigit() is True:
     
             if int(y1)> int(y2):
-                print('''\n    Parves '{0}' ei ole nii palju hanesid!
+                print('''    Parves '{0}' ei ole nii palju hanesid!
     Parves '{0}' on {1} hane!
     Sisestage väiksem väärtus!'''.format(y3[indeks],y2))
     return y1
