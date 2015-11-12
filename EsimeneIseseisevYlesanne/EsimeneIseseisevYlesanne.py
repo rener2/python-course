@@ -14,8 +14,7 @@ if sisend1 == 'jah':
         rohk += 0.15                                                                                     
         print('            %.2f' %rohk , str('bar'))                                                                
         
-    print('    Süvaveepump seiskus!\n')
-    
+    print('    Süvaveepump seiskus!\n')    
     rohk='%.2f' %rohk                                                                                   #2 digits after decimal point                                                                  
     rohk = float(rohk)                                                                                  #Float value to rohk again
     sisend2 = input('Kas keerata kraanid lahti (jah/ei)? ')                                    #Second input
@@ -25,7 +24,7 @@ if sisend1 == 'jah':
         while sisend2 == 'jah':                                                                    #and loop lasts as long as the input is 'jah'                                                                                             
             
             if 2.75 <= rohk <= 2.85:pumbaOlek= '[Seisab]'                                               #state of tthe water pump, depending on the level of
-            if 1.75 <= rohk <= 1.85:pumbaOlek= '[Töötab]'                                               #pressure inside the hydrophore
+            elif 1.75 <= rohk <= 1.85:pumbaOlek= '[Töötab]'                                               #pressure inside the hydrophore
             bar = str('bar')                                                                            
             
           
@@ -51,5 +50,6 @@ if sisend1 == 'jah':
                             
             sisend2 = input('\n\nKas te soovite jätkata(jah/ei)? ')                                  #Second input again with a different message,if it was 'jah' the
             if sisend2=='jah':print('') 
-            if sisend2 == str('ei'):                                                                    #first time
+            elif sisend2 == str('ei'):                                                                    #first time
                 print('Süsteem suleti!')
+                exit()
