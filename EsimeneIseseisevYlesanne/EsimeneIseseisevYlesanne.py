@@ -52,4 +52,4 @@ if sisend1 == 'jah':
             if sisend2=='jah':print('') 
             elif sisend2 == str('ei'):                                                                    #first time
                 print('Süsteem suleti!')
-                exit()
+              
