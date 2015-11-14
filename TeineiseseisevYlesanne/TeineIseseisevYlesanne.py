@@ -1,3 +1,4 @@
+import string
 def haneparvenimed():
     arv=1
     nimedeList=list()
@@ -5,7 +6,11 @@ def haneparvenimed():
     while arv-1 != mituParve:   
         print("\tSisestage {0}. haneparve ...".format(arv))
         nimi=input("\t\t... nimi: ")
+        while ' ' in nimi or nimi.isdigit() is True or nimi == '' or  kirjaVaheMark(nimi) == True:
+            nimi=input("\t\t... nimi: ")          
         liikmeteArv=input("\t\t... liikmete arv: ")
+        while liikmeteArv.isdigit() is False:
+            liikmeteArv=input("\t\t... liikmete arv: ")
         nimedeList.append(nimi)
         liikmeteArvuList.append(liikmeteArv)
         arv+=1
@@ -83,6 +88,18 @@ def jatkamine():
         print("Programm läks kinni!")
         edasi = False
     return edasi
+
+
+def kirjaVaheMark(sone):
+    arv=0
+    while arv != len(sone):
+        if sone[arv] in string.punctuation:
+            value = True
+        else:
+            value=False
+        arv+=1
+    return value
+    
 
 
         
