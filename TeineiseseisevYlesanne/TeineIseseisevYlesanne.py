@@ -92,12 +92,9 @@ def jatkamine():
 
 def kirjaVaheMark(sone):
     arv=0
-    while arv != len(sone):
-        if sone[arv] in string.punctuation:
-            value = True
-        else:
-            value=False
-        arv+=1
+    value = False
+    for char in sone:
+        if char in string.punctuation: value = True
     return value
     
 
