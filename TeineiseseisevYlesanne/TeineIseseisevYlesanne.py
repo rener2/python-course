@@ -3,9 +3,9 @@ def haneparvenimed():
     nimedeList=list()
     liikmeteArvuList=list()
     while arv-1 != mituParve:   
-        print("    Sisestage {0} .haneparve ...".format(arv))
-        nimi=input("        ...nimi:    ")
-        liikmeteArv=input("        ...liikmete arv:    ")
+        print("\tSisestage {0} .haneparve ...".format(arv))
+        nimi=input("\t\t...nimi:    ")
+        liikmeteArv=input("\t\t...liikmete arv:    ")
         nimedeList.append(nimi)
         liikmeteArvuList.append(liikmeteArv)
         arv+=1
@@ -15,7 +15,7 @@ def lounasseLahevad():
     print("Lõunasse lähevad järgmised haneparved:")
     arv=0
     while arv != int(mituParve):
-        print("    '{0}'({1} hane)".format(nimedeList[arv],liikmeteArvuList[arv]))
+        print("\t'{0}'({1} hane)".format(nimedeList[arv],liikmeteArvuList[arv]))
         arv+=1
             
 def maandumine():
@@ -55,18 +55,18 @@ Eesti järvedel ei peatunud {3} hane!
 
 def vastus(identifikaator,mituMaandub,lendabEdasi):
     if identifikaator == "x":
-        print("Endla järvele maandus {0} hane ja {1} hane lendab edasi!".format(mituMaandub,lendabEdasi))                                            
+        print("\tEndla järvele maandus {0} hane ja {1} hane lendab edasi!".format(mituMaandub,lendabEdasi))                                            
     if identifikaator == "y":
-        print("   Saadjärvele maandus {0} hane ja {1} hane lendab edasi!".format(mituMaandub,lendabEdasi))
+        print("\tSaadjärvele maandus {0} hane ja {1} hane lendab edasi!".format(mituMaandub,lendabEdasi))
     if identifikaator == "z":
-        print("        Ratva järvele maandus {0} hane ja {1} hane lendab edasi!".format(mituMaandub,lendabEdasi))
+        print("\tRatva järvele maandus {0} hane ja {1} hane lendab edasi!".format(mituMaandub,lendabEdasi))
 
         
 def kontroll(arv,alles):
     if  0 > alles:
-        print('''        Parves {0} ei ole nii palju hanesid!
-        Parves {0} on {1} hane!
-        Sisestage väiksem väärtus!'''.format(nimedeList[arv],liikmeteArvuList[arv]))
+        print('''\t\tParves {0} ei ole nii palju hanesid!
+\t\tParves {0} on {1} hane!
+\t\tSisestage väiksem väärtus!'''.format(nimedeList[arv],liikmeteArvuList[arv]))
         kontroll = True
     else: kontroll = False
     return kontroll
