@@ -15,7 +15,7 @@ def lounasseLahevad():
     print("Lõunasse lähevad järgmised haneparved:")
     arv=0
     while arv != int(mituParve):
-        print("\t'{0}' ( {1} hane)".format(nimedeList[arv],liikmeteArvuList[arv]))
+        print("\t'{0}'( {1} hane)".format(nimedeList[arv],liikmeteArvuList[arv]))
         arv+=1
             
 def maandumine():
