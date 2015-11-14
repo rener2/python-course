@@ -6,7 +6,7 @@ def haneparvenimed():
     while arv-1 != mituParve:   
         print("\tSisestage {0}. haneparve ...".format(arv))
         nimi=input("\t\t... nimi: ")
-        while nimi.isdigit() is True or kirjaVaheMark(nimi) is True:
+        while nimi.isdigit() is True or kirjaVaheMark(nimi) is True or " " in nimi:
             nimi=input("\t\t... nimi: ")          
         liikmeteArv=input("\t\t... liikmete arv: ")
         while liikmeteArv.isdigit() is False:
