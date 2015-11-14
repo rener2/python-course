@@ -46,8 +46,7 @@ def maandumine():
         kokkuLendabEdasi +=lendabEedasi
         arv+=1
         
-    print('''
-Endla järvele on maandunud kokku {0} hane!
+    print('''\nEndla järvele on maandunud kokku {0} hane!
 Saadjärvele on maandunud kokku {1} hane!
 Ratva järvele on maandunud kokku {2} hane!
 Eesti järvedel ei peatunud {3} hane!
@@ -75,7 +74,7 @@ def kontroll(arv,alles):
 
 
 def jatkamine():
-    sisend = input('Kas soovite jätkata(jah/ei)? ')
+    sisend = input('Kas soovite jätkata (jah/ei)?')
     if sisend == 'jah':
         print("")
         edasi = True
