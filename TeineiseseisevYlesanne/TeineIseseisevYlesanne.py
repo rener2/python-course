@@ -3,7 +3,7 @@ def haneparvenimed():
     nimedeList=list()
     liikmeteArvuList=list()
     while arv-1 != mituParve:   
-        print("\tSisestage {0} .haneparve ...".format(arv))
+        print("\tSisestage {0} . haneparve ... ".format(arv))
         nimi=input("\t\t... nimi: ")
         liikmeteArv=input("\t\t... liikmete arv: ")
         nimedeList.append(nimi)
