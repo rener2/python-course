@@ -88,7 +88,10 @@ def jatkamine():
         
 a = True
 while a == True:
-    mituParve = int(input("Mitu haneparve on nähtud? "))
+    mituParve = input("Mitu haneparve on nähtud? ")
+    while mituParve.isdigit() is False:
+        mituParve = input("Mitu haneparve on nähtud? ")
+    mituParve=int(mituParve)
     listid=haneparvenimed()
     nimedeList=listid['nimedeList']
     liikmeteArvuList=listid['liikmeteArvuList']
