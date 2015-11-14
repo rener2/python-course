@@ -29,10 +29,12 @@ def maandumine():
         lendabSaad = int(liikmeteArvuList[arv]) - int(mituMaandubEndla)
         kontroll(arv,lendabSaad)
         vastus("x",mituMaandubEndla,lendabSaad)
+        
         mituMaandubSaad = input("Mitu hane maandub '{0}' parvest Saadjärvele?    ".format(nimedeList[arv]))
         lendabRatva = lendabSaad - int(mituMaandubSaad)
         kontroll(arv,lendabRatva)
         vastus("y",mituMaandubSaad,lendabRatva)
+        
         mituMaandubRatva =input("Mitu hane maandub '{0}' parvest Ratva järvele?    ".format(nimedeList[arv]))
         lendabEedasi = lendabRatva - int(mituMaandubRatva)
         kontroll(arv,lendabEedasi)
@@ -40,7 +42,7 @@ def maandumine():
                                 
         kokkuMaandubEndla = kokkuMaandubEndla + int(mituMaandubEndla)
         kokkuMaandubSaad = kokkuMaandubSaad + int(mituMaandubSaad)                          
-        kokkuMaandubRatva = kokkuMaandubRatva + int(mituMaandubSaad)
+        kokkuMaandubRatva = kokkuMaandubRatva + int(mituMaandubRatva)
         kokkuLendabEdasi +=lendabEedasi
         arv+=1
         
