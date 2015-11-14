@@ -4,8 +4,8 @@ def haneparvenimed():
     liikmeteArvuList=list()
     while arv-1 != mituParve:   
         print("\tSisestage {0} .haneparve ...".format(arv))
-        nimi=input("\t\t...nimi:    ")
-        liikmeteArv=input("\t\t...liikmete arv:    ")
+        nimi=input("\t\t...nimi: ")
+        liikmeteArv=input("\t\t...liikmete arv: ")
         nimedeList.append(nimi)
         liikmeteArvuList.append(liikmeteArv)
         arv+=1
@@ -25,17 +25,17 @@ def maandumine():
     kokkuMaandubRatva = 0
     kokkuLendabEdasi = 0
     while arv != len(nimedeList):
-        mituMaandubEndla = input("Mitu hane maandub '{0}' parvest Endla järvele?    ".format(nimedeList[arv]))
+        mituMaandubEndla = input("Mitu hane maandub '{0}' parvest Endla järvele? ".format(nimedeList[arv]))
         lendabSaad = int(liikmeteArvuList[arv]) - int(mituMaandubEndla)
         kontroll(arv,lendabSaad)
         vastus("x",mituMaandubEndla,lendabSaad)
         
-        mituMaandubSaad = input("Mitu hane maandub '{0}' parvest Saadjärvele?    ".format(nimedeList[arv]))
+        mituMaandubSaad = input("Mitu hane maandub '{0}' parvest Saadjärvele? ".format(nimedeList[arv]))
         lendabRatva = lendabSaad - int(mituMaandubSaad)
         kontroll(arv,lendabRatva)
         vastus("y",mituMaandubSaad,lendabRatva)
         
-        mituMaandubRatva =input("Mitu hane maandub '{0}' parvest Ratva järvele?    ".format(nimedeList[arv]))
+        mituMaandubRatva =input("Mitu hane maandub '{0}' parvest Ratva järvele? ".format(nimedeList[arv]))
         lendabEedasi = lendabRatva - int(mituMaandubRatva)
         kontroll(arv,lendabEedasi)
         vastus("z",mituMaandubRatva,lendabEedasi)
@@ -53,7 +53,7 @@ Ratva järvele on maandunud kokku {2} hane!
 Eesti järvedel ei peatunud {3} hane!
 '''.format(kokkuMaandubEndla,kokkuMaandubSaad,kokkuMaandubRatva,kokkuLendabEdasi))
                                 
-    return 
+    #return 
 
 def vastus(identifikaator,mituMaandub,lendabEdasi):
     if identifikaator == "x":
@@ -88,7 +88,7 @@ def jatkamine():
         
 a = True
 while a == True:
-    mituParve = int(input("Mitu haneparve on nähtud?    "))
+    mituParve = int(input("Mitu haneparve on nähtud? "))
     listid=haneparvenimed()
     nimedeList=listid['nimedeList']
     liikmeteArvuList=listid['liikmeteArvuList']
@@ -101,4 +101,3 @@ while a == True:
 #Haneparve nimi ei tohi sisaldada tühikuid, ega muid kirjavahemärke (nt !, ?, . jne).
 #Parandada tagasisides saadud vead testide lugemise juhendi järgi (vt siia - lisatud Error_OutputIsTooShort ja Error_EOF_InputError veateadete põhjused).
 #Error_EOF_InputError -  Punktide arv ei ole kunagi suurem nullist.
-#Programmi töö võib lõpetada küsimus "Kas soovite jätkata (jah/ei)? ", mille vastuseks on "ei" ja kõik muud vastused peale "jah".
