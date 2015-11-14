@@ -2,10 +2,10 @@ def haneparvenimed():
     arv=1
     nimedeList=list()
     liikmeteArvuList=list()
-    while arv-1 != mituParve:
-        print("    Sisestage {0}. haneparve ...".format(arv))
-        nimi=input("        ...nimi:    ")
-        liikmeteArv=input("        ...liikmete arv:    ")
+    while arv-1 != mituParve:   
+        print("        Sisestage {0} .haneparve ...".format(arv))
+        nimi=input("            ...nimi:    ")
+        liikmeteArv=input("            ...liikmete arv:    ")
         nimedeList.append(nimi)
         liikmeteArvuList.append(liikmeteArv)
         arv+=1
@@ -17,7 +17,7 @@ def lounasseLahevad():
     while arv != int(mituParve):
         print("    ","'{0}'({1}) hane".format(nimedeList[arv],liikmeteArvuList[arv]))
         arv+=1
-
+            
 def maandumine():
     arv=0
     kokkuMaandubEndla = 0
