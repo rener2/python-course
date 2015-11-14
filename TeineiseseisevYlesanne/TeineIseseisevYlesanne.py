@@ -75,12 +75,12 @@ def kontroll(arv,alles):
 
 
 def jatkamine():
-    sisend = input('Kas te soovite jätkata(jah/ei)? ')
+    sisend = input('Kas soovite jätkata(jah/ei)? ')
     if sisend == 'jah':
         print("")
         edasi = True
     else:
-        print("Programm läks kinni! ")
+        print("Programm läks kinni!")
         edasi = False
     return edasi
 
