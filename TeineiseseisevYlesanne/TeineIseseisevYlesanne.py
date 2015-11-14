@@ -15,7 +15,7 @@ def lounasseLahevad():
     print("Lõunasse lähevad järgmised haneparved:")
     arv=0
     while arv != int(mituParve):
-        print("\t'{0}'({1} hane)".format(nimedeList[arv],liikmeteArvuList[arv]))
+        print("\t'{0}'( {1} hane)".format(nimedeList[arv],liikmeteArvuList[arv]))
         arv+=1
             
 def maandumine():
@@ -46,7 +46,8 @@ def maandumine():
         kokkuLendabEdasi +=lendabEedasi
         arv+=1
         
-    print('''\nEndla järvele on maandunud kokku {0} hane!
+    print('''
+Endla järvele on maandunud kokku {0} hane!
 Saadjärvele on maandunud kokku {1} hane!
 Ratva järvele on maandunud kokku {2} hane!
 Eesti järvedel ei peatunud {3} hane!
@@ -74,7 +75,7 @@ def kontroll(arv,alles):
 
 
 def jatkamine():
-    sisend = input('Kas soovite jätkata (jah/ei)?')
+    sisend = input('Kas soovite jätkata(jah/ei)?')
     if sisend == 'jah':
         print("")
         edasi = True
