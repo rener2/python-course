@@ -1,5 +1,3 @@
-mituParve = int(input("\nMitu haneparve on nähtud? "))
-
 def haneparvenimed():
     arv=1
     nimedeList=list()
@@ -79,7 +77,7 @@ def kontroll(arv,alles):
     else: kontroll = False
     return kontroll
 def jatkamine():
-    sisend = input('Kas te soovite jätkata(jah/ei)? ')
+    sisend = input('Kas te soovite jätkata(jah/ei)?')
     if sisend == 'jah':
         print("")
         edasi = True
@@ -87,6 +85,7 @@ def jatkamine():
         print("Programm läks kinni!")
 a = True
 while a == True:
+    mituParve = int(input("\nMitu haneparve on nähtud? "))
     listid=haneparvenimed()
     nimedeList=listid['nimedeList']
     liikmeteArvuList=listid['liikmeteArvuList']
