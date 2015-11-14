@@ -83,6 +83,11 @@ def jatkamine():
         edasi = True
     else:
         print("Programm läks kinni!")
+        edasi = False
+    return edasi
+
+
+        
 a = True
 while a == True:
     mituParve = int(input("\nMitu haneparve on nähtud? "))
