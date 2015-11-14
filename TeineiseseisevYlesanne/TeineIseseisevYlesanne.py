@@ -1,4 +1,6 @@
 import string
+
+
 def haneparvenimed():
     arv=1
     nimedeList=list()
@@ -16,12 +18,14 @@ def haneparvenimed():
         arv+=1
     return {'nimedeList':nimedeList, 'liikmeteArvuList':liikmeteArvuList}
 
+
 def lounasseLahevad():
     print("Lõunasse lähevad järgmised haneparved:")
     arv=0
     while arv != int(mituParve):
         print("\t'{0}' ({1} hane)".format(nimedeList[arv],liikmeteArvuList[arv]))
         arv+=1
+
             
 def maandumine():
     arv=0
@@ -30,19 +34,26 @@ def maandumine():
     kokkuMaandubRatva = 0
     kokkuLendabEdasi = 0
     while arv != len(nimedeList):
+        
         mituMaandubEndla = input("Mitu hane maandub '{0}' parvest Endla järvele? ".format(nimedeList[arv]))
         lendabSaad = int(liikmeteArvuList[arv]) - int(mituMaandubEndla)
-        kontroll(arv,lendabSaad)
+        while mituMaandubEndla.isdigit() is False or kontroll(arv,lendabSaad) is True:
+            mituMaandubEndla = input("Mitu hane maandub '{0}' parvest Endla järvele? ".format(nimedeList[arv]))
+        lendabSaad = int(liikmeteArvuList[arv]) - int(mituMaandubEndla)
         vastus("x",mituMaandubEndla,lendabSaad)
         
         mituMaandubSaad = input("Mitu hane maandub '{0}' parvest Saadjärvele? ".format(nimedeList[arv]))
         lendabRatva = lendabSaad - int(mituMaandubSaad)
-        kontroll(arv,lendabRatva)
+        while mituMaandubSaad.isdigit() is False or kontroll(arv,lendabRatva) is True:
+            mituMaandubSaad = input("Mitu hane maandub '{0}' parvest Saadjärvele? ".format(nimedeList[arv]))
+        lendabRatva = lendabSaad - int(mituMaandubSaad)
         vastus("y",mituMaandubSaad,lendabRatva)
         
         mituMaandubRatva =input("Mitu hane maandub '{0}' parvest Ratva järvele? ".format(nimedeList[arv]))
         lendabEedasi = lendabRatva - int(mituMaandubRatva)
-        kontroll(arv,lendabEedasi)
+        while mituMaandubRatva.isdigit() is False or kontroll(arv,lendabEedasi) is True:
+            mituMaandubRatva =input("Mitu hane maandub '{0}' parvest Ratva järvele? ".format(nimedeList[arv]))
+        lendabEedasi = lendabRatva - int(mituMaandubRatva)
         vastus("z",mituMaandubRatva,lendabEedasi)
                                 
         kokkuMaandubEndla = kokkuMaandubEndla + int(mituMaandubEndla)
@@ -59,6 +70,7 @@ Eesti järvedel ei peatunud {3} hane!
 '''.format(kokkuMaandubEndla,kokkuMaandubSaad,kokkuMaandubRatva,kokkuLendabEdasi))
                                 
     #return 
+
 
 def vastus(identifikaator,mituMaandub,lendabEdasi):
     if identifikaator == "x":
