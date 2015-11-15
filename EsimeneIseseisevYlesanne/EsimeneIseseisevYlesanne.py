@@ -48,7 +48,7 @@ if sisend1 == "jah":
                 
 
                             
-            sisend2 = input("\nKas te soovite jätkata(jah/ei)?")                                  #Second input again with a different message,if it was 'jah' the
+            sisend2 = input("\nKas te soovite jätkata (jah/ei)? ")                                  #Second input again with a different message,if it was 'jah' the
             if sisend2=="jah":print("") 
             else:print("Süsteem suleti!")                                                                                   #first time
                 
