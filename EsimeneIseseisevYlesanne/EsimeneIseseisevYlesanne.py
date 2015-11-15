@@ -1,4 +1,4 @@
-rohk =1.65
+rohk =1.8
 import random
 arv=2
 kasKaivitada = input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)? ")
