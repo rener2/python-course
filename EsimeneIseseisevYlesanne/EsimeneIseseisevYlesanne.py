@@ -34,3 +34,4 @@ if kasKaivitada == "jah":
                 print("\t[Töötab]", veeTarbimine,'[Tõuseb]',':','%.2f' %rohk,"bar")
         arv +=1
         kasKraanid = input("\nKas te soovite jätkata (jah/ei)? ")           
+        if kasKraanid != "jah":print("Süsteem suleti!")
