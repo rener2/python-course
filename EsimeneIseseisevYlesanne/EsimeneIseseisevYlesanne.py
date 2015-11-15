@@ -13,7 +13,7 @@ else:
         print("\t\t\t{0} bar".format(rohk))
         rohk = float(rohk)
     print("\tSüvaveepump seiskus!")
-    kasKraanid = input("\nKas keerata kraanid lahti (jah/ei)? ")
+    kasKraanid = input("Kas keerata kraanid lahti (jah/ei)? ")
     if kasKraanid != "jah":
         print("Kraane lahti ei keeratud!")
     while kasKraanid == "jah":
