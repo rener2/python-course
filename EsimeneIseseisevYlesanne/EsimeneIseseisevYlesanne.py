@@ -20,14 +20,17 @@ if kasKaivitada == "jah":
         if 2.75 < rohk :pumbaOlek= "[Seisab]"                                 
         if rohk < 1.85:pumbaOlek= "[Töötab]"                                               
         bar = str("bar")
-        while 1.80 <= rohk:     
+        
+        
+        while 1.85 < rohk :     
             veeTarbimine= random.choice(('[Tarbitakse]', '[Ei tarbita]')) 
             if veeTarbimine=='[Tarbitakse]':rohuSuund = '[Alaneb]'
             if veeTarbimine== '[Tarbitakse]'and 1.80<=rohk: rohk -= 0.05
             rohk = round(rohk,2)
             if veeTarbimine== '[Ei tarbita]':rohuSuund = '[Seisab]'
             print('\t',pumbaOlek, veeTarbimine, rohuSuund,':','%.2f' %rohk,bar,)
-        while pumbaOlek == '[Töötab]' and rohk<= 2.75:              
+            
+        while rohk < 2.75:              
             veeTarbimine = random.choice(('[Tarbitakse]', '[Ei tarbita]'))
             rohuSuund = '[Tõuseb]'                                                          
             if veeTarbimine== '[Ei tarbita]' and rohk <= 2.70 : rohk += 0.15                                                         
