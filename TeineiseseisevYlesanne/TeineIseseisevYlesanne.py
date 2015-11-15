@@ -92,16 +92,6 @@ def vastus(identifikaator,mituMaandub,lendabEdasi):
     if identifikaator == "z":
         print("\tRatva järvele maandus {0} hane ja {1} hane lendab edasi!".format(mituMaandub,lendabEdasi))
 
-        
-def kontroll(arv,alles):
-    if  0 > alles:
-        print('''\t\tParves {0} ei ole nii palju hanesid!
-\t\tParves {0} on {1} hane!
-\t\tSisestage väiksem väärtus!'''.format(nimedeList[arv],))
-        kontroll = True
-    else: kontroll = False
-    return kontroll
-
 
 def jatkamine():
     sisend = input("Kas soovite jätkata (jah/ei)? ")
@@ -121,8 +111,6 @@ def kirjaVaheMark(sone):
         if char in string.punctuation: value = True
     return value
     
-
-
         
 a = True
 while a == True:
@@ -138,7 +126,3 @@ while a == True:
     a=jatkamine()
 
     
-      
-#Haneparve nimi ei tohi sisaldada tühikuid, ega muid kirjavahemärke (nt !, ?, . jne).
-#Parandada tagasisides saadud vead testide lugemise juhendi järgi (vt siia - lisatud Error_OutputIsTooShort ja Error_EOF_InputError veateadete põhjused).
-#Error_EOF_InputError -  Punktide arv ei ole kunagi suurem nullist.
