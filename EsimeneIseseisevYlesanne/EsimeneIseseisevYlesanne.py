@@ -2,7 +2,7 @@ import random                                                                   
 
 sisend1 = input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)? ")                     #First input
                                                                                                         
-if sisend1 == "ei":                                                                                #Depending on the input (jah/ei) the program will either
+if sisend1 != "jah":                                                                                #Depending on the input (jah/ei) the program will either
     print("Süsteemi ei võeta tööle!")                                                                   #continue or shut down               
 rohk = 1.80                             
 if sisend1 == "jah":                
@@ -18,7 +18,7 @@ if sisend1 == "jah":
     rohk='%.2f' %rohk                                                                                   #2 digits after decimal point                                                                  
     rohk = float(rohk)                                                                                  #Float value to rohk again
     sisend2 = input("Kas keerata kraanid lahti (jah/ei)? ")                                    #Second input
-    if sisend2 == "ei":                                                                            #If 'ei' program quits and prints a message
+    if sisend2 != "jah":                                                                            #If 'ei' program quits and prints a message
         print("Kraane lahti ei keeratud!")
     elif sisend2 == 'jah':                                                                         #if 'jah' then program goes into a while loop
         while sisend2 == 'jah':                                                                    #and loop lasts as long as the input is 'jah'                                                                                             
@@ -50,6 +50,6 @@ if sisend1 == "jah":
                             
             sisend2 = input("\nKas te soovite jätkata(jah/ei)?")                                  #Second input again with a different message,if it was 'jah' the
             if sisend2=="jah":print("") 
-            elif sisend2 == str("ei"):                                                                    #first time
-                print("Süsteem suleti!")
+            else:print("Süsteem suleti!")                                                                                   #first time
+                
               
