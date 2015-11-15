@@ -17,9 +17,9 @@ if sisend1 == "jah":
     print('\tSüvaveepump seiskus!\n')    
     rohk='%.2f' %rohk                                                                                   #2 digits after decimal point                                                                  
     rohk = float(rohk)                                                                                  #Float value to rohk again
-    sisend2 = input('Kas keerata kraanid lahti (jah/ei)? ')                                    #Second input
-    if sisend2 == 'ei':                                                                            #If 'ei' program quits and prints a message
-        print('Kraane lahti ei keeratud.')
+    sisend2 = input("Kas keerata kraanid lahti (jah/ei)? ")                                    #Second input
+    if sisend2 == "ei":                                                                            #If 'ei' program quits and prints a message
+        print("Kraane lahti ei keeratud!")
     elif sisend2 == 'jah':                                                                         #if 'jah' then program goes into a while loop
         while sisend2 == 'jah':                                                                    #and loop lasts as long as the input is 'jah'                                                                                             
             
@@ -34,7 +34,7 @@ if sisend1 == "jah":
                 if veeTarbimine== '[Tarbitakse]'and 1.80<=rohk: rohk -= 0.05
                 rohk = round(rohk,2)
                 if veeTarbimine== '[Ei tarbita]':rohuSuund = '[Seisab]'
-                print('\t',pumbaOlek, veeTarbimine, rohuSuund,'%.2f' %rohk,bar,)                                             
+                print('\t',pumbaOlek, veeTarbimine, rohuSuund,':','%.2f' %rohk,bar,)                                             
                 #would add time.sleep(1) here and into the other loop, but since it is a simulation, it is not necessary
                
             while pumbaOlek == '[Töötab]' and rohk<= 2.75:              
@@ -43,7 +43,7 @@ if sisend1 == "jah":
                 if veeTarbimine== '[Ei tarbita]' and rohk <= 2.70 : rohk += 0.15                                                         
                 if veeTarbimine== '[Tarbitakse]'and rohk <= 2.75: rohk += 0.10    
                 rohk = round(rohk,2)
-                print('\t',pumbaOlek, veeTarbimine, rohuSuund,'%.2f' %rohk,bar)
+                print('\t',pumbaOlek, veeTarbimine, rohuSuund,':','%.2f' %rohk,bar)
                 
                 
 
