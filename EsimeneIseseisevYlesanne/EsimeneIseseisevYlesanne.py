@@ -13,7 +13,7 @@ else:
         print("\t\t\t{0} bar".format(rohk))
         rohk = float(rohk)
     print("\tSüvaveepump seiskus!")
-    kasKraanid = input("Kas keerata kraanid lahti (jah/ei)? ")
+    kasKraanid = input("\nKas keerata kraanid lahti (jah/ei)? ")
     if kasKraanid != "jah":
         print("Kraane lahti ei keeratud!")
     while kasKraanid == "jah":
@@ -24,14 +24,14 @@ else:
                 if veeTarbimine== "[Tarbitakse]"and 1.80<=rohk: rohk -= 0.05
                 rohk = round(rohk,2)
                 if veeTarbimine== "[Ei tarbita]":rohuSuund = "[Seisab]"
-                print("\t[Seisab]", veeTarbimine, rohuSuund,":","%.2f" %rohk,"bar")
+                print("\t[Seisab]", veeTarbimine, rohuSuund,": %.2f bar"%rohk)
         if arv % 2 != 0:
             while rohk <= 2.75:
                 veeTarbimine = random.choice(("[Tarbitakse]", "[Ei tarbita]"))                                                        
                 if veeTarbimine== '[Ei tarbita]' and rohk <= 2.70 : rohk += 0.15                                                         
                 if veeTarbimine== '[Tarbitakse]'and rohk <= 2.75: rohk += 0.10    
                 rohk = round(rohk,2)
-                print("\t[Töötab]", veeTarbimine,"[Tõuseb] : %.2f" %rohk,"bar")
+                print("\t[Töötab]", veeTarbimine,"[Tõuseb] : %.2f bar"%rohk)
         arv +=1
         kasKraanid = input("\nKas te soovite jätkata (jah/ei)? ")           
         if kasKraanid != "jah":print("Süsteem suleti!")
