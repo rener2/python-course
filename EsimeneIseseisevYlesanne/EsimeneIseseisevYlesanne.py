@@ -17,8 +17,8 @@ if kasKaivitada == "jah":
         print("Kraane lahti ei keeratud!")
     while kasKraanid == 'jah':                                                                                                                                                                 
             
-        if 2.75 <= rohk <= 2.85:pumbaOlek= "[Seisab]"                                 
-        if 1.75 <= rohk <= 1.85:pumbaOlek= "[Töötab]"                                               
+        if 2.75 < rohk :pumbaOlek= "[Seisab]"                                 
+        if rohk < 1.85:pumbaOlek= "[Töötab]"                                               
         bar = str("bar")
         while 1.80 <= rohk:     
             veeTarbimine= random.choice(('[Tarbitakse]', '[Ei tarbita]')) 
@@ -27,6 +27,13 @@ if kasKaivitada == "jah":
             rohk = round(rohk,2)
             if veeTarbimine== '[Ei tarbita]':rohuSuund = '[Seisab]'
             print('\t',pumbaOlek, veeTarbimine, rohuSuund,':','%.2f' %rohk,bar,)
+        while pumbaOlek == '[Töötab]' and rohk<= 2.75:              
+            veeTarbimine = random.choice(('[Tarbitakse]', '[Ei tarbita]'))
+            rohuSuund = '[Tõuseb]'                                                          
+            if veeTarbimine== '[Ei tarbita]' and rohk <= 2.70 : rohk += 0.15                                                         
+            if veeTarbimine== '[Tarbitakse]'and rohk <= 2.75: rohk += 0.10    
+            rohk = round(rohk,2)
+            print('\t',pumbaOlek, veeTarbimine, rohuSuund,':','%.2f' %rohk,bar)
  
             
     
