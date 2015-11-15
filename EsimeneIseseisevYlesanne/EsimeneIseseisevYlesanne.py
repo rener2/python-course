@@ -11,3 +11,7 @@ if kasKaivitada == "jah":
         print("\t\t\t {0} bar".format(rohk))
         rohk = float(rohk)
     print("\tSüvaveepump seiskus!")
+    kasKraanid = input("\nKas keerata kraanid lahti (jah/ei)? ")
+    if kasKraanid != "jah":
+        print("Kraane lahti ei keeratud!")
+    if kasKraanid == "jah":
