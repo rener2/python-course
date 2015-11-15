@@ -16,21 +16,20 @@ if kasKaivitada == "jah":
     if kasKraanid != "jah":
         print("Kraane lahti ei keeratud!")
     if kasKraanid == "jah":
-        while kasKraanid == 'jah':                                                                    #and loop lasts as long as the input is 'jah'                                                                                             
+        while kasKraanid == 'jah':                                                                                                                                                                 
             
-            if 2.75 <= rohk <= 2.85:pumbaOlek= '[Seisab]'                                               #state of tthe water pump, depending on the level of
-            elif 1.75 <= rohk <= 1.85:pumbaOlek= '[Töötab]'                                               #pressure inside the hydrophore
+            if 2.75 <= rohk <= 2.85:pumbaOlek= '[Seisab]'                                   
+            elif 1.75 <= rohk <= 1.85:pumbaOlek= '[Töötab]'                                               
             bar = str('bar')                                                                            
             
           
-            while pumbaOlek == '[Seisab]' and 1.80 <= rohk:                                                            #displays log if water pump isn't working and while
-                veeTarbimine= random.choice(('[Tarbitakse]', '[Ei tarbita]')) #chooses random value every iteration    #pressure is over 1.80 bar
+            while pumbaOlek == '[Seisab]' and 1.80 <= rohk:                                                            
+                veeTarbimine= random.choice(('[Tarbitakse]', '[Ei tarbita]')) 
                 if veeTarbimine=='[Tarbitakse]':rohuSuund = '[Alaneb]'
                 if veeTarbimine== '[Tarbitakse]'and 1.80<=rohk: rohk -= 0.05
                 rohk = round(rohk,2)
                 if veeTarbimine== '[Ei tarbita]':rohuSuund = '[Seisab]'
                 print('\t',pumbaOlek, veeTarbimine, rohuSuund,':','%.2f' %rohk,bar,)                                             
-                #would add time.sleep(1) here and into the other loop, but since it is a simulation, it is not necessary
                
             while pumbaOlek == '[Töötab]' and rohk<= 2.75:              
                 veeTarbimine = random.choice(('[Tarbitakse]', '[Ei tarbita]'))
@@ -40,4 +39,4 @@ if kasKaivitada == "jah":
                 rohk = round(rohk,2)
                 print('\t',pumbaOlek, veeTarbimine, rohuSuund,':','%.2f' %rohk,bar)
         
-            kasKraanid = input("\nKas te soovite jätkata (jah/ei)? ")                                  #Second input again with a different message,if it was 'jah' the
+            kasKraanid = input("\nKas te soovite jätkata (jah/ei)? ")           
