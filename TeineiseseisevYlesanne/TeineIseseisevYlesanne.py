@@ -38,8 +38,8 @@ def maandumine():
         mituMaandubEndla = input("Mitu hane maandub '{0}' parvest Endla järvele? ".format(nimedeList[arv]))
         while mituMaandubEndla.isdigit() is False or int(mituMaandubEndla) > int(liikmeteArvuList[arv]):
             if int(mituMaandubEndla)> int(liikmeteArvuList[arv]):
-                print('''\tParves {0} ei ole nii palju hanesid!
-\tParves {0} on {1} hane!
+                print('''\tParves '{0}' ei ole nii palju hanesid!
+\tParves '{0}' on {1} hane!
 \tSisestage väiksem väärtus!'''.format(nimedeList[arv],liikmeteArvuList[arv]))
             mituMaandubEndla = input("Mitu hane maandub '{0}' parvest Endla järvele? ".format(nimedeList[arv]))
         lendabSaad = int(liikmeteArvuList[arv]) - int(mituMaandubEndla)
@@ -48,8 +48,8 @@ def maandumine():
         mituMaandubSaad = input("Mitu hane maandub '{0}' parvest Saadjärvele? ".format(nimedeList[arv]))
         while mituMaandubSaad.isdigit() is False or int(mituMaandubSaad) > lendabSaad :
             if int(mituMaandubSaad)> lendabSaad:
-                print('''\tParves {0} ei ole nii palju hanesid!
-\tParves {0} on {1} hane!
+                print('''\tParves '{0}' ei ole nii palju hanesid!
+\tParves '{0}' on {1} hane!
 \tSisestage väiksem väärtus!'''.format(nimedeList[arv],lendabSaad))
             mituMaandubSaad = input("Mitu hane maandub '{0}' parvest Saadjärvele? ".format(nimedeList[arv]))
         lendabRatva = lendabSaad - int(mituMaandubSaad)
@@ -58,8 +58,8 @@ def maandumine():
         mituMaandubRatva =input("Mitu hane maandub '{0}' parvest Ratva järvele? ".format(nimedeList[arv]))
         while mituMaandubRatva.isdigit() is False or int(mituMaandubRatva) > lendabRatva:
             if int(mituMaandubRatva) > lendabRatva:
-                print('''\tParves {0} ei ole nii palju hanesid!
-\tParves {0} on {1} hane!
+                print('''\tParves '{0}' ei ole nii palju hanesid!
+\tParves '{0}' on {1} hane!
 \tSisestage väiksem väärtus!'''.format(nimedeList[arv],lendabRatva))
             mituMaandubRatva =input("Mitu hane maandub '{0}' parvest Ratva järvele? ".format(nimedeList[arv]))
         lendabEedasi = lendabRatva - int(mituMaandubRatva)
