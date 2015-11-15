@@ -2,10 +2,10 @@ import random                                                                   
 
 sisend1 = input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)? ")                     #First input
                                                                                                         
-if sisend1 == 'ei':                                                                                #Depending on the input (jah/ei) the program will either
-    print('Süsteemi ei võeta tööle!')                                                                   #continue or shut down               
+if sisend1 == "ei":                                                                                #Depending on the input (jah/ei) the program will either
+    print("Süsteemi ei võeta tööle!")                                                                   #continue or shut down               
 rohk = 1.80                             
-if sisend1 == 'jah':                
+if sisend1 == "jah":                
     print('''                           
 \tSüvaveepump käivitus! 
 \t\tHüdrofoorirõhk: ''')                                                                                    #If first input was 'jah', then program the continues and
@@ -48,8 +48,8 @@ if sisend1 == 'jah':
                 
 
                             
-            sisend2 = input('\n\nKas te soovite jätkata(jah/ei)? ')                                  #Second input again with a different message,if it was 'jah' the
-            if sisend2=='jah':print('') 
-            elif sisend2 == str('ei'):                                                                    #first time
-                print('Süsteem suleti!')
+            sisend2 = input("\nKas te soovite jätkata(jah/ei)?")                                  #Second input again with a different message,if it was 'jah' the
+            if sisend2=="jah":print("") 
+            elif sisend2 == str("ei"):                                                                    #first time
+                print("Süsteem suleti!")
               
