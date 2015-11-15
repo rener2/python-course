@@ -1,6 +1,6 @@
 rohk =1.65
 import random
-kasKaivitada = input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)? ")
+kasKaivitada = input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)?")
 if kasKaivitada != "jah":
     print("Süsteemi ei võta tööle!")
 if kasKaivitada == "jah":
