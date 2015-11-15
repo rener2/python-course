@@ -33,5 +33,5 @@ else:
                 rohk = round(rohk,2)
                 print("\t[Töötab]", veeTarbimine,"[Tõuseb] : %.2f" %rohk,"bar")
         arv +=1
-        kasKraanid = input("\nKas te soovite jätkata (jah/ei)? ")           
+        kasKraanid = input("Kas te soovite jätkata (jah/ei)? ")           
         if kasKraanid != "jah":print("Süsteem suleti!")
