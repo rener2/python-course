@@ -10,7 +10,7 @@ if kasKaivitada == "jah":
     while rohk <= 2.75:
         rohk += 0.15
         rohk = "%.2f"%rohk
-        print("\t\t\t {0} bar".format(rohk))
+        print("\t\t\t{0} bar".format(rohk))
         rohk = float(rohk)
     print("\tSüvaveepump seiskus!")
     kasKraanid = input("\nKas keerata kraanid lahti (jah/ei)? ")
