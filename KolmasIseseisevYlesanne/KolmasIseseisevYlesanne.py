@@ -21,12 +21,12 @@ def lisa_salvesta():
     on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni"""
     sisend=input("\tFikseerige sade kujul [Identifikaator] [20] (C):")
     aeg=current_time()
-    if sisend == 'C':return sisend
+    if sisend == 'C':return valikvastus()
     if check_brackets(sisend)==False: return lisa_salvesta()
     fail=open("andmebaasid.txt","a",encoding="utf-8")
     fail.write(aeg+"-"+sisend+"\n")
     fail.close()
-    print("\tSade fikseeritud")
+    print("\tSade fikseeritud!\n")
     valik=valikvastus()
     return valik
 
@@ -122,7 +122,7 @@ def check_brackets(sentence):
     esimeneP=sentence.index('[')
     esimeneV=sentence.index(']')
     if esimeneV<esimeneP:return False
-    teineP=esimeneV+1 #kui vahepeal on tühik siis muuta +2'ks ehk [](kui siin on tühik vahel)[]
+    teineP=esimeneV+1 #kui vahepeal on tühik siis muuta +2'ks ehk [](kui siin peab olema tühik vahel)[]
     teineV=sentence[esimeneV+1:].index(']')+teineP
     if teineV < teineP: return False
     if teineV+1 != len(sentence) or esimeneP != 0: return False
@@ -138,7 +138,7 @@ def check_brackets(sentence):
 print("""L - Sademete lisamine andmebaasi.
 M - Andmebaasis oleva sademe muutmine.
 P - Andmebaasis asuvate sademete kuvamine.
-E - Programmi sulgemine.""")
+E - Programmi sulgemine.\n""")
 valik=valikvastus()
 while True:
     if valik == 'L':
