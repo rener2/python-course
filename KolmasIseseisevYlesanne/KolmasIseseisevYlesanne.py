@@ -3,6 +3,8 @@ import datetime
 import sys
 
 
+
+
 def valikvastus():
     """Funktsioon laseb kasutajal valida 4 sisendi vahel ja 
     tagastab sisestatud väärtuse"""
@@ -20,13 +22,14 @@ def lisa_salvesta():
     sisend=input("\tFikseerige sade kujul [Identifikaator] [20] (C):")
     aeg=current_time()
     if sisend == 'C':return sisend
-    if check_brackets(sisend)==False: valik=lisa_salvesta()
+    if check_brackets(sisend)==False: return lisa_salvesta()
     fail=open("andmebaasid.txt","a",encoding="utf-8")
-    fail.write(aeg+" "+sisend+"\n")
+    fail.write(aeg+"-"+sisend+"\n")
     fail.close()
     print("\tSade fikseeritud")
     valik=valikvastus()
     return valik
+
 
 def muuda(muudetava_indeks):
     """Muudab andmebaasi sisu antud indeksi ja uue sisu järgi"""
@@ -34,7 +37,7 @@ def muuda(muudetava_indeks):
     if sisend == "C": return sisend
     if check_brackets(sisend) == False: muuda(muudetava_indeks)
     aeg=current_time()
-    sisend=aeg+" "+sisend+"\n"
+    sisend=aeg+"-"+sisend+"\n"
     fail=open("andmebaasid.txt","r",encoding="utf-8")
     sisu=fail.readlines()
     sisu.pop(muudetava_indeks)
@@ -46,6 +49,7 @@ def muuda(muudetava_indeks):
     print("Sademe kirje on uuendatud!")
     fail.close()
 
+
 def muuda_sadet():
     """Funktsioon kuvab kasutajale andmebaasi sisu indeksi järgi ja
     laseb kasutajal indeksi järgi andmebaasi sisu muuta muuda() funktsiooni
@@ -54,7 +58,7 @@ def muuda_sadet():
     sisu=fail.readlines()
     arv=1
     for i in sisu:
-        print("{0}. {1}".format(arv,i[20:]))
+        print("{0}. {1}".format(arv,i[20:-1]))
         arv+=1
     fail.close()
     sisend=""
@@ -77,7 +81,7 @@ def kuva_sademeid():
     print("\tAndmebaasi sisu:")
     sisu=fail.readlines()
     for i in sisu:
-        print("\t\t",i)
+        print("\t\t",i[:-1])
     fail.close()
     valik=valikvastus()
     return valik
@@ -102,7 +106,7 @@ def current_time():
     aeg=str(aeg)
     aeg=aeg[0:19]
     aeg=aeg.replace("-",".")
-    aeg=aeg.replace("T","-")
+    aeg=aeg.replace("T"," ")
     return aeg
 
 
@@ -126,20 +130,10 @@ def check_brackets(sentence):
         if i not in string.ascii_letters:
             a = False
     b=sentence[teineP+1:teineV].isdigit()
-    if a == True and b == True:
-        return True    
-    else:
-        return False
+    if a == True and b == True:return True    
+    else:return False
     
     
-    
-
-#
- #fail=open("andmebaasid.txt","w",encoding="utf-8")
- #fail.close()
-#def salvesta():
-
-
     
 print("""L - Sademete lisamine andmebaasi.
 M - Andmebaasis oleva sademe muutmine.
