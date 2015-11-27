@@ -62,10 +62,10 @@ def muuda_sadet():
         arv+=1
     fail.close()
     sisend=""
-    while sisend.isdigit() == False or int(sisend)> arv or int(sisend) < 1:
+    while sisend.isdigit() == False or int(sisend)> len(sisu) or int(sisend) < 1:
         sisend=input("Sisestage sademe indeks, mida soovite muuta (C): ")
         if sisend =='C': return valikvastus()
-        elif int(sisend) < 1 or int(sisend) > arv:
+        elif int(sisend) < 1 or int(sisend) > len(sisu):
             print("Sisestatud sademe indeksit ei eksisteeri andmebaasis!")
     valjund=muuda(int(sisend)-1)
     if valjund == "C": return valikvastus()
@@ -91,7 +91,7 @@ def sulge_programm():
     """Funktsioon sulgeb programmi, juhul kui kasutaja seda soovib,
     kui ei soovi siis läheb uuesti valikvastus() funktsiooni"""
     sisend=input("\tKas olete kindel, et soovite programmi sulgeda ('jah')? ")
-    if sisend=="jah" or "JAH":
+    if sisend=="jah" or sisend == "JAH":
         print("\tProgramm läks kinni!")
         sys.exit()
     else:
