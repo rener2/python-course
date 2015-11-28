@@ -6,7 +6,7 @@ kasKaivitada = input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/
 if kasKaivitada != "jah":
     print("Süsteemi ei võta tööle!")
 elif kasKaivitada == "jah":
-    print("\n\tSüvaveepump käivitus! \n\t\tHüdrofoori rõhk: ")
+    print("\n\tSüvaveepump käivitus!\n\t\tHüdrofoori rõhk:")
     
     while rohk <= 2.80:
         rohk += 0.15
@@ -17,7 +17,7 @@ elif kasKaivitada == "jah":
     kasKraanid = input("\nKas keerata kraanid lahti (jah/ei)? ")
     
     if kasKraanid != "jah":
-        print("Kraane lahti ei keeratud!")
+        print("\tKraane lahti ei keeratud!")
         
     while kasKraanid == "jah":
         
