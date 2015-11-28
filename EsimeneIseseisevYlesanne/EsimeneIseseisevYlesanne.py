@@ -2,11 +2,11 @@ rohk =1.65
 import random
 arv=2
 
-kasKaivitada=input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)? ")
+kasKaivitada = input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)? ")
 if kasKaivitada != "jah":
     print("Süsteemi ei võta tööle!")
 elif kasKaivitada == "jah":
-    print("\n\tSüvaveepump käivitus!\n\t\tHüdrofoori rõhk:")
+    print("\n\t Süvaveepump käivitus!\n\t\tHüdrofoori rõhk:")
     
     while rohk <= 2.80:
         rohk += 0.15
