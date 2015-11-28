@@ -35,7 +35,7 @@ def muuda(muudetava_indeks):
     """Muudab andmebaasi sisu antud indeksi ja uue sisu järgi"""
     sisend=input("Fikseerige sade kujul [Identifikaator] [20] (C): ")
     if sisend == "C": return sisend
-    if check_brackets(sisend) == False: muuda(muudetava_indeks)
+    if check_brackets(sisend) == False: return muuda(muudetava_indeks)
     aeg=current_time()
     sisend=aeg+"-"+sisend+"\n"
     fail=open("andmebaasid.txt","r",encoding="utf-8")
@@ -48,6 +48,8 @@ def muuda(muudetava_indeks):
     fail.write(sisu)
     print("Sademe kirje on uuendatud!")
     fail.close()
+    valik=valikvastus()
+    return valik
 
 
 def muuda_sadet():
@@ -69,11 +71,9 @@ def muuda_sadet():
             print("Sisestatud sademe indeksit ei eksisteeri andmebaasis!")
     valjund=muuda(int(sisend)-1)
     if valjund == "C": return valikvastus()
-    valik=valikvastus()
-    return valik
+    return valjund
 
 
-        
 def kuva_sademeid():
     """Funktsioon avab faili ja kuvab selle sisu ridade kaupa, lõpus läheb
     uuesti valikvastus() funktsiooni"""
