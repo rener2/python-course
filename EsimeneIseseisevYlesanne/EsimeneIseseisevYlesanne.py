@@ -4,7 +4,7 @@ arv=2
 
 kasKaivitada=input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)? ")
 if kasKaivitada != "jah":
-    print("\n\tSüsteemi ei võta tööle!")
+    print("\tSüsteemi ei võta tööle!")
 elif kasKaivitada == "jah":
     print("\n\tSüvaveepump käivitus!")
     print("\t\tHüdrofoori rõhk:")
