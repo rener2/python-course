@@ -8,7 +8,7 @@ if kasKaivitada != "jah":
     print("Süsteemi ei võta tööle!")
     
 elif kasKaivitada == "jah":
-    print("\n\tSüvaveepump käivitus!")
+    print("\tSüvaveepump käivitus!")
     print("\t\tHüdrofoori rõhk:")
     
     while rohk <= 2.75:
