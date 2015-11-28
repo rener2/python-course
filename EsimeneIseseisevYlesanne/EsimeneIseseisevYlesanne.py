@@ -2,7 +2,7 @@ rohk =1.65
 import random
 arv=2
 
-kasKaivitada = str(input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)? "))
+kasKaivitada=input('Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)?')
 
 if kasKaivitada != "jah":
     print("Süsteemi ei võta tööle!")
