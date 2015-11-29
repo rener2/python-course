@@ -9,7 +9,6 @@ def valikvastus():
     """Funktsioon laseb kasutajal valida 4 sisendi vahel ja 
     tagastab sisestatud väärtuse"""
     valikud=("L","M","P","E")        
-    valik =""
     valik = input("Sisestage soovitud valik (L, M, P, E): ")
     if valik not in valikud:
         valik=valikvastus()
@@ -19,8 +18,7 @@ def valikvastus():
 def lisa_salvesta():
     """Funktsioon lisab anbmebaasi faili kasutaja sisestatud andmed, kui andmed
     on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni"""
-    sisend=input("\tFikseerige sade kujul [Identifikaator] [20] (C):")
-    aeg=current_time()
+    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C):"),current_time()
     if sisend == 'C':return valikvastus()
     if check_brackets(sisend)==False: return lisa_salvesta()
     fail=open("andmebaasid.txt","a",encoding="utf-8")
@@ -33,10 +31,9 @@ def lisa_salvesta():
 
 def muuda(muudetava_indeks):
     """Muudab andmebaasi sisu antud indeksi ja uue sisu järgi"""
-    sisend=input("Fikseerige sade kujul [Identifikaator] [20] (C): ")
+    sisend,aeg=input("Fikseerige sade kujul [Identifikaator] [20] (C): "),current_time()
     if sisend == "C": return sisend
     if check_brackets(sisend) == False: return muuda(muudetava_indeks)
-    aeg=current_time()
     sisend=aeg+"-"+sisend+"\n"
     fail=open("andmebaasid.txt","r",encoding="utf-8")
     sisu=fail.readlines()
@@ -103,12 +100,11 @@ def current_time():
     """Funktsioon võtab antud aja
     kasutan sisendi aja võtmiseks"""
     aeg=datetime.datetime.now().isoformat()
-    aeg=str(aeg)
     aeg=aeg[0:19]
     aeg=aeg.replace("-",".")
     aeg=aeg.replace("T"," ")
     return aeg
-
+#ehk aeg=datetime.datetime.now().isoformat().replace("-",".").replace("T"," ")[0:19]
 
 def check_brackets(sentence):
     """Checks if given sentence consists of values inside two
@@ -122,7 +118,7 @@ def check_brackets(sentence):
     esimeneP=sentence.index('[')
     esimeneV=sentence.index(']')
     if esimeneV<esimeneP:return False
-    teineP=esimeneV+1 #kui vahepeal on tühik siis muuta +2'ks ehk [](kui siin peab olema tühik vahel)[]
+    teineP=esimeneV+1 
     teineV=sentence[esimeneV+1:].index(']')+teineP
     if teineV < teineP: return False
     if teineV+1 != len(sentence) or esimeneP != 0: return False
