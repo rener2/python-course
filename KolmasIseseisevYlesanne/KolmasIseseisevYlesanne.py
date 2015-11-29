@@ -134,6 +134,8 @@ def check_brackets(sentence):
     else:return False
     
     
+
+
     
 print("""L - Sademete lisamine andmebaasi.
 M - Andmebaasis oleva sademe muutmine.
