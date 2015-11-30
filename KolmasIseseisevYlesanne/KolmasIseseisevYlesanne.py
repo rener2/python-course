@@ -25,7 +25,7 @@ def lisa_salvesta():
         return valikvastus()
     if check_brackets(sisend)==False: return lisa_salvesta()
     fail=open("andmebaas.txt","a",encoding="utf-8")
-    fail.write(aeg+"-"+sisend+"\n")
+    fail.write(aeg+"- "+sisend+"\n")
     fail.close()
     print("\tSade fikseeritud!\n")
     valik=valikvastus()
@@ -37,7 +37,7 @@ def muuda(muudetava_indeks):
     sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),current_time()
     if sisend == "C" or sisend == "c": return sisend
     if check_brackets(sisend) == False: return muuda(muudetava_indeks)
-    sisend=aeg+"-"+sisend+"\n"
+    sisend=aeg+"- "+sisend+"\n"
     fail=open("andmebaas.txt","r",encoding="utf-8")
     sisu=fail.readlines()
     sisu.pop(muudetava_indeks)
