@@ -18,7 +18,7 @@ def valikvastus():
 def lisa_salvesta():
     """Funktsioon lisab anbmebaasi faili kasutaja sisestatud andmed, kui andmed
     on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni"""
-    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C):"),current_time()
+    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),current_time()
     if sisend == 'C':return valikvastus()
     if check_brackets(sisend)==False: return lisa_salvesta()
     fail=open("andmebaasid.txt","a",encoding="utf-8")
