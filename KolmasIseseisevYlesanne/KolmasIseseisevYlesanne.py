@@ -25,7 +25,7 @@ def lisa_salvesta():
         return valikvastus()
     if check_brackets(sisend)==False: return lisa_salvesta()
     fail=open("andmebaas.txt","a",encoding="utf-8")
-    fail.write(aeg+"\t - "+sisend+"\n")
+    fail.write(aeg+" - "+sisend+"\n")
     fail.close()
     print("\tSade fikseeritud!\n")
     valik=valikvastus()
@@ -86,7 +86,7 @@ def kuva_sademeid():
     print("\tAndmebaasi sisu:")
     sisu=fail.readlines()
     for i in sisu:
-        print("\t\t",i[:-1])
+        print("\t\t\t",i[:-1])
     print("")
     fail.close()
     valik=valikvastus()
