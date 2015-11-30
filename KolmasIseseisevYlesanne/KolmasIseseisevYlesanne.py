@@ -23,7 +23,7 @@ def lisa_salvesta():
     if sisend == 'C' or sisend == 'c':return valikvastus()
     if check_brackets(sisend)==False: return lisa_salvesta()
     fail=open("andmebaas.txt","a",encoding="utf-8")
-    fail.write(aeg+"-"+sisend+"\n")
+    fail.write(aeg+" - "+sisend+"\n")
     fail.close()
     print("\tSade fikseeritud!\n")
     valik=valikvastus()
@@ -35,7 +35,7 @@ def muuda(muudetava_indeks):
     sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),current_time()
     if sisend == "C" or sisend == "c": return sisend
     if check_brackets(sisend) == False: return muuda(muudetava_indeks)
-    sisend=aeg+"-"+sisend+"\n"
+    sisend=aeg+" - "+sisend+"\n"
     fail=open("andmebaas.txt","r",encoding="utf-8")
     sisu=fail.readlines()
     sisu.pop(muudetava_indeks)
@@ -59,7 +59,7 @@ def muuda_sadet():
     arv=1
     print("\tAndmebaasis olevad andmed:")
     for i in sisu:
-        print("\t\t{0}. {1}".format(arv,i[20:-1]))
+        print("\t\t{0}. {1}".format(arv,i[22:-1]))
         arv+=1
     print("")
     fail.close()
@@ -67,8 +67,9 @@ def muuda_sadet():
     while sisend.isdigit() == False or int(sisend)> len(sisu) or int(sisend) < 1:
         sisend=input("\tSisestage sademe indeks, mida soovite muuta (C): ")
         if sisend =='C' or sisend == 'c': return valikvastus()
-        elif int(sisend) < 1 or int(sisend) > len(sisu):
-            print("\t\tSisestatud sademe indeksit ei eksisteeri andmebaasis!")
+        if sisend.isdigit() == True:
+            if int(sisend) < 1 or int(sisend) > len(sisu):
+                print("\t\tSisestatud sademe indeksit ei eksisteeri andmebaasis!")
     valjund=muuda(int(sisend)-1)
     if valjund == "C" or valjund =="c" : return valikvastus()
     return valjund
@@ -154,3 +155,4 @@ while True:
         valik=kuva_sademeid()
     elif valik == 'E':
         valik=sulge_programm()
+
