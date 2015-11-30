@@ -52,7 +52,7 @@ def muuda(muudetava_indeks):
     return valik
 
 
-def muuda_sadet(): #00_xx
+def muuda_sadet(): 
     """Funktsioon kuvab kasutajale andmebaasi sisu indeksi järgi ja
     laseb kasutajal indeksi järgi andmebaasi sisu muuta muuda() funktsiooni
     välja kutsudes. Lõpus käivitab uuesti valikvastus() funktsiooni"""
@@ -75,7 +75,6 @@ def muuda_sadet(): #00_xx
             if int(sisend) < 1 or int(sisend) > len(sisu):
                 print("\t\tSisestatud sademe indeksit ei eksisteeri andmebaasis!")
     valjund=muuda(int(sisend)-1)
-    #if valjund == "C" or valjund =="c" : return valikvastus()
     return valjund
 
 
@@ -86,7 +85,7 @@ def kuva_sademeid():
     print("\tAndmebaasi sisu:")
     sisu=fail.readlines()
     for i in sisu:
-        print("\t\t\t",i[:-1])
+        print("\t\t",i[:-1])
     print("")
     fail.close()
     valik=valikvastus()
@@ -119,7 +118,6 @@ def current_time():
     kell=aeg[11:]
     aeg="{0}.{1}.{2} {3}".format(paev,kuu,aasta,kell)
     return aeg
-#e. aeg=datetime.datetime.now().isoformat().replace("-",".").replace("T"," ")[0:19]
 
 
 def check_brackets(sentence):
