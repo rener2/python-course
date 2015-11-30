@@ -10,6 +10,7 @@ def valikvastus():
     tagastab sisestatud väärtuse"""
     valikud=("L","M","P","E")        
     valik = input("Sisestage soovitud valik (L, M, P, E): ")
+    valik=valik.upper()
     if valik not in valikud: return valikvastus()
     if valik in valikud: print("")
     return valik
@@ -19,7 +20,7 @@ def lisa_salvesta():
     """Funktsioon lisab anbmebaasi faili kasutaja sisestatud andmed, kui andmed
     on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni"""
     sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),current_time()
-    if sisend == 'C':return valikvastus()
+    if sisend == 'C' or sisend == 'c':return valikvastus()
     if check_brackets(sisend)==False: return lisa_salvesta()
     fail=open("andmebaasid.txt","a",encoding="utf-8")
     fail.write(aeg+"-"+sisend+"\n")
@@ -31,8 +32,8 @@ def lisa_salvesta():
 
 def muuda(muudetava_indeks):
     """Muudab andmebaasi sisu antud indeksi ja uue sisu järgi"""
-    sisend,aeg=input("Fikseerige sade kujul [Identifikaator] [20] (C): "),current_time()
-    if sisend == "C": return sisend
+    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),current_time()
+    if sisend == "C" or sisend == "c": return sisend
     if check_brackets(sisend) == False: return muuda(muudetava_indeks)
     sisend=aeg+"-"+sisend+"\n"
     fail=open("andmebaasid.txt","r",encoding="utf-8")
@@ -43,7 +44,7 @@ def muuda(muudetava_indeks):
     fail.close()
     fail=open("andmebaasid.txt","w",encoding="utf-8")
     fail.write(sisu)
-    print("Sademe kirje on uuendatud!")
+    print("\tSademe kirje on uuendatud!")
     fail.close()
     valik=valikvastus()
     return valik
@@ -56,18 +57,20 @@ def muuda_sadet():
     fail = open("andmebaasid.txt","r+",encoding="utf-8")
     sisu=fail.readlines()
     arv=1
+    print("\tAndmebaasis olevad andmed:")
     for i in sisu:
-        print("{0}. {1}".format(arv,i[20:-1]))
+        print("\t\t{0}. {1}".format(arv,i[20:-1]))
         arv+=1
+    print("")
     fail.close()
     sisend=""
     while sisend.isdigit() == False or int(sisend)> len(sisu) or int(sisend) < 1:
-        sisend=input("Sisestage sademe indeks, mida soovite muuta (C): ")
-        if sisend =='C': return valikvastus()
+        sisend=input("\tSisestage sademe indeks, mida soovite muuta (C): ")
+        if sisend =='C' or sisend == 'c': return valikvastus()
         elif int(sisend) < 1 or int(sisend) > len(sisu):
-            print("Sisestatud sademe indeksit ei eksisteeri andmebaasis!")
+            print("\t\tSisestatud sademe indeksit ei eksisteeri andmebaasis!")
     valjund=muuda(int(sisend)-1)
-    if valjund == "C": return valikvastus()
+    if valjund == "C" or valjund =="c" : return valikvastus()
     return valjund
 
 
@@ -79,6 +82,7 @@ def kuva_sademeid():
     sisu=fail.readlines()
     for i in sisu:
         print("\t\t",i[:-1])
+    print("")
     fail.close()
     valik=valikvastus()
     return valik
@@ -92,6 +96,7 @@ def sulge_programm():
         print("\tProgramm läks kinni!")
         sys.exit()
     else:
+        print("")
         valik=valikvastus()
         return valik
 
