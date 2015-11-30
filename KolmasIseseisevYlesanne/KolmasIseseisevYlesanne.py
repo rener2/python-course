@@ -148,7 +148,6 @@ def check_brackets(sentence):
     
     
 
-
     
 print("""L - Sademete lisamine andmebaasi.
 M - Andmebaasis oleva sademe muutmine.
@@ -164,4 +163,3 @@ while True:
         valik=kuva_sademeid()
     elif valik == 'E':
         valik=sulge_programm()
-
