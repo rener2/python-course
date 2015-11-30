@@ -22,7 +22,7 @@ def lisa_salvesta():
     sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),current_time()
     if sisend == 'C' or sisend == 'c':return valikvastus()
     if check_brackets(sisend)==False: return lisa_salvesta()
-    fail=open("andmebaasid.txt","a",encoding="utf-8")
+    fail=open("andmebaas.txt","a",encoding="utf-8")
     fail.write(aeg+"-"+sisend+"\n")
     fail.close()
     print("\tSade fikseeritud!\n")
@@ -36,13 +36,13 @@ def muuda(muudetava_indeks):
     if sisend == "C" or sisend == "c": return sisend
     if check_brackets(sisend) == False: return muuda(muudetava_indeks)
     sisend=aeg+"-"+sisend+"\n"
-    fail=open("andmebaasid.txt","r",encoding="utf-8")
+    fail=open("andmebaas.txt","r",encoding="utf-8")
     sisu=fail.readlines()
     sisu.pop(muudetava_indeks)
     sisu.insert(muudetava_indeks,sisend)
     sisu="".join(sisu)
     fail.close()
-    fail=open("andmebaasid.txt","w",encoding="utf-8")
+    fail=open("andmebaas.txt","w",encoding="utf-8")
     fail.write(sisu)
     print("\tSademe kirje on uuendatud!")
     fail.close()
@@ -54,7 +54,7 @@ def muuda_sadet():
     """Funktsioon kuvab kasutajale andmebaasi sisu indeksi järgi ja
     laseb kasutajal indeksi järgi andmebaasi sisu muuta muuda() funktsiooni
     välja kutsudes. Lõpus käivitab uuesti valikvastus() funktsiooni"""
-    fail = open("andmebaasid.txt","r+",encoding="utf-8")
+    fail = open("andmebaas.txt","r+",encoding="utf-8")
     sisu=fail.readlines()
     arv=1
     print("\tAndmebaasis olevad andmed:")
@@ -77,7 +77,7 @@ def muuda_sadet():
 def kuva_sademeid():
     """Funktsioon avab faili ja kuvab selle sisu ridade kaupa, lõpus läheb
     uuesti valikvastus() funktsiooni"""
-    fail=open("andmebaasid.txt","r",encoding="utf-8")
+    fail=open("andmebaas.txt","r",encoding="utf-8")
     print("\tAndmebaasi sisu:")
     sisu=fail.readlines()
     for i in sisu:
