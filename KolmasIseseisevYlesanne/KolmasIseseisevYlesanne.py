@@ -59,9 +59,9 @@ def muuda_sadet():
     fail = open("andmebaas.txt","r+",encoding="utf-8")
     sisu=fail.readlines()
     arv=1
-    print("\tAndmebaasis olevad andmed:")
+    print("\tAndmebaasis olevad andmed: ")
     for i in sisu:
-        print("\t\t{0}.{1}".format(arv,i[22:-1]))
+        print("\t\t{0}. {1}".format(arv,i[22:-1]))
         arv+=1
     print("")
     fail.close()
@@ -82,7 +82,7 @@ def kuva_sademeid():
     """Funktsioon avab faili ja kuvab selle sisu ridade kaupa, lõpus läheb
     uuesti valikvastus() funktsiooni"""
     fail=open("andmebaas.txt","r",encoding="utf-8")
-    print("\tAndmebaasi sisu:")
+    print("\tAndmebaasi sisu: ")
     sisu=fail.readlines()
     for i in sisu:
         print("\t\t",i[:-1])
@@ -96,7 +96,7 @@ def sulge_programm():
     """Funktsioon sulgeb programmi, juhul kui kasutaja seda soovib,
     kui ei soovi siis läheb uuesti valikvastus() funktsiooni"""
     sisend=input("\tKas olete kindel, et soovite programmi sulgeda ('jah')? ")
-    if sisend=="jah" or sisend == "JAH":
+    if sisend.upper()=="JAH":
         print("\tProgramm läks kinni!")
         sys.exit()
     else:
