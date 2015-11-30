@@ -10,8 +10,8 @@ def valikvastus():
     tagastab sisestatud väärtuse"""
     valikud=("L","M","P","E")        
     valik = input("Sisestage soovitud valik (L, M, P, E): ")
-    if valik not in valikud:
-        valik=valikvastus()
+    if valik not in valikud: return valikvastus()
+    if valik in valikud: print("")
     return valik
 
 
