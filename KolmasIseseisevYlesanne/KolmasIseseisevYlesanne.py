@@ -132,9 +132,9 @@ def check_brackets(sentence):
     esimeneP=sentence.index('[')
     esimeneV=sentence.index(']')
     if esimeneV<esimeneP:return False
-    if sentence[esimeneV+1] != ' ': return False
-    teineP=esimeneV+2
-    teineV=sentence[esimeneV+2:].index(']')+teineP
+    #if sentence[esimeneV+1] != ' ': return False
+    teineP=esimeneV+1
+    teineV=sentence[esimeneV+1:].index(']')+teineP
     if teineV < teineP: return False
     if teineV+1 != len(sentence) or esimeneP != 0: return False   
     for i in sentence[esimeneP+1:esimeneV]:
@@ -145,6 +145,7 @@ def check_brackets(sentence):
     else:return False
     
     
+
 
     
 print("""L - Sademete lisamine andmebaasi.
@@ -161,3 +162,31 @@ while True:
         valik=kuva_sademeid()
     elif valik == 'E':
         valik=sulge_programm()
+
+
+
+
+
+"""def check_brackets(sentence):
+    Checks if given sentence consists of values inside two
+    brackets if not, returns False. Function returns true if inside
+    of the first bracket consists of letters and the inside of the second
+    bracket consists only of numbers.Furthermore functions returns false
+    if there is anything outside the brackets
+    a=True
+    b=True
+    if sentence.count('[')<2 or sentence.count(']')<2:return False    
+    esimeneP=sentence.index('[')
+    esimeneV=sentence.index(']')
+    if esimeneV<esimeneP:return False
+    if sentence[esimeneV+1] != ' ': return False
+    teineP=esimeneV+2
+    teineV=sentence[esimeneV+2:].index(']')+teineP
+    if teineV < teineP: return False
+    if teineV+1 != len(sentence) or esimeneP != 0: return False   
+    for i in sentence[esimeneP+1:esimeneV]:
+        if i not in string.ascii_letters:
+            a = False
+    b=sentence[teineP+1:teineV].isdigit()
+    if a == True and b == True:return True    
+    else:return False"""
