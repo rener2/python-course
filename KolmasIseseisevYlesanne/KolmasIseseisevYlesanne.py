@@ -12,7 +12,7 @@ def valikvastus():
     valik = input("Sisestage soovitud valik (L, M, P, E): ")
     valik=valik.upper()
     if valik not in valikud: return valikvastus()
-    if valik in valikud: print("")
+    elif valik in valikud: print("")
     return valik
 
 
@@ -20,7 +20,9 @@ def lisa_salvesta():
     """Funktsioon lisab anbmebaasi faili kasutaja sisestatud andmed, kui andmed
     on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni"""
     sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),current_time()
-    if sisend == 'C' or sisend == 'c':return valikvastus()
+    if sisend == 'C' or sisend == 'c':
+        print("")
+        return valikvastus()
     if check_brackets(sisend)==False: return lisa_salvesta()
     fail=open("andmebaas.txt","a",encoding="utf-8")
     fail.write(aeg+" - "+sisend+"\n")
@@ -44,7 +46,7 @@ def muuda(muudetava_indeks):
     fail.close()
     fail=open("andmebaas.txt","w",encoding="utf-8")
     fail.write(sisu)
-    print("\tSademe kirje on uuendatud!")
+    print("\tSademe kirje on uuendatud!\n")
     fail.close()
     valik=valikvastus()
     return valik
@@ -66,12 +68,14 @@ def muuda_sadet():
     sisend=""
     while sisend.isdigit() == False or int(sisend)> len(sisu) or int(sisend) < 1:
         sisend=input("\tSisestage sademe indeks, mida soovite muuta (C): ")
-        if sisend =='C' or sisend == 'c': return valikvastus()
+        if sisend =='C' or sisend == 'c':
+            print("")
+            return valikvastus()
         if sisend.isdigit() == True:
             if int(sisend) < 1 or int(sisend) > len(sisu):
                 print("\t\tSisestatud sademe indeksit ei eksisteeri andmebaasis!")
     valjund=muuda(int(sisend)-1)
-    if valjund == "C" or valjund =="c" : return valikvastus()
+    #if valjund == "C" or valjund =="c" : return valikvastus()
     return valjund
 
 
