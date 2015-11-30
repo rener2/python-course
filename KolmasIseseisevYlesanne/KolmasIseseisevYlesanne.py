@@ -104,7 +104,8 @@ def current_time():
     aeg=aeg.replace("-",".")
     aeg=aeg.replace("T"," ")
     return aeg
-#ehk aeg=datetime.datetime.now().isoformat().replace("-",".").replace("T"," ")[0:19]
+#e. aeg=datetime.datetime.now().isoformat().replace("-",".").replace("T"," ")[0:19]
+
 
 def check_brackets(sentence):
     """Checks if given sentence consists of values inside two
@@ -114,14 +115,14 @@ def check_brackets(sentence):
     if there is anything outside the brackets"""
     a=True
     b=True
-    if sentence.count('[')<2 or sentence.count(']')<2:return False
+    if sentence.count('[')<2 or sentence.count(']')<2:return False    
     esimeneP=sentence.index('[')
     esimeneV=sentence.index(']')
     if esimeneV<esimeneP:return False
     teineP=esimeneV+1 
     teineV=sentence[esimeneV+1:].index(']')+teineP
     if teineV < teineP: return False
-    if teineV+1 != len(sentence) or esimeneP != 0: return False
+    if teineV+1 != len(sentence) or esimeneP != 0: return False   
     for i in sentence[esimeneP+1:esimeneV]:
         if i not in string.ascii_letters:
             a = False
@@ -138,7 +139,7 @@ M - Andmebaasis oleva sademe muutmine.
 P - Andmebaasis asuvate sademete kuvamine.
 E - Programmi sulgemine.\n""")
 valik=valikvastus()
-while True:
+while True:    
     if valik == 'L':
         valik=lisa_salvesta()
     elif valik == 'M':
