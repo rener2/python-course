@@ -119,8 +119,9 @@ def check_brackets(sentence):
     esimeneP=sentence.index('[')
     esimeneV=sentence.index(']')
     if esimeneV<esimeneP:return False
-    teineP=esimeneV+1 
-    teineV=sentence[esimeneV+1:].index(']')+teineP
+    if sentence[esimeneV+1] != ' ': return False
+    teineP=esimeneV+2
+    teineV=sentence[esimeneV+2:].index(']')+teineP
     if teineV < teineP: return False
     if teineV+1 != len(sentence) or esimeneP != 0: return False   
     for i in sentence[esimeneP+1:esimeneV]:
