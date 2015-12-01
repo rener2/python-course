@@ -52,7 +52,7 @@ def muuda(muudetava_indeks):
     return valik
 
 
-def muuda_sadet():
+def muuda_sadet(): #00_xx
     """Funktsioon kuvab kasutajale andmebaasi sisu indeksi järgi ja
     laseb kasutajal indeksi järgi andmebaasi sisu muuta muuda() funktsiooni
     välja kutsudes. Lõpus käivitab uuesti valikvastus() funktsiooni"""
@@ -61,7 +61,7 @@ def muuda_sadet():
     arv=1
     print("\tAndmebaasis olevad andmed:")
     for i in sisu:
-        print("\t\t{0}.{1}".format(arv,i[22:-1]))
+        print("\t\t{0}. {1}".format(arv,i[22:-1]))
         arv+=1
     print("")
     fail.close()
@@ -113,6 +113,11 @@ def current_time():
     aeg=aeg[0:19]
     aeg=aeg.replace("-",".")
     aeg=aeg.replace("T"," ")
+    aasta=aeg[0:4]
+    kuu=aeg[5:7]
+    paev=aeg[8:10]
+    kell=[11:]
+    aeg="{0}.{1}.{2} {3}".format(paev,kuu,aasta,kell)
     return aeg
 #e. aeg=datetime.datetime.now().isoformat().replace("-",".").replace("T"," ")[0:19]
 
