@@ -116,7 +116,7 @@ def current_time():
     aasta=aeg[0:4]
     kuu=aeg[5:7]
     paev=aeg[8:10]
-    kell=[11:]
+    kell=aeg[11:]
     aeg="{0}.{1}.{2} {3}".format(paev,kuu,aasta,kell)
     return aeg
 #e. aeg=datetime.datetime.now().isoformat().replace("-",".").replace("T"," ")[0:19]
