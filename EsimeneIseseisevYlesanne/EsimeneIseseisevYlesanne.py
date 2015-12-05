@@ -3,7 +3,7 @@ import random
 arv=2
 kasKaivitada = input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)? ")
 if kasKaivitada != "jah":
-    print("Süsteemi ei võta tööle")
+    print("Süsteemi eissvõtatööle!")
     
 elif kasKaivitada == "jah":
     print("\n\tSüvaveepump käivitus!\n\t\tHüdrofoori rõhk:")
