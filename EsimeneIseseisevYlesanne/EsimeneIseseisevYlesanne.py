@@ -1,14 +1,11 @@
 rohk =1.65
 import random
 arv=2
-see=("jah","ei")
-kasKaivitada="d"
-while kasKaivitada not in see:
-    kasKaivitada = input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)?")
-if kasKaivitada != "jah":
+kasKaivitada = input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)?")
+if kasKaivitada.lower() != "jah":
     print("Süsteemi ei võta tööle!")
     
-elif kasKaivitada == "jah":
+elif kasKaivitada.lower() == "jah":
     print("\n\tSüvaveepump käivitus!\n\t\tHüdrofoori rõhk:")
     
     while rohk <= 2.80:
