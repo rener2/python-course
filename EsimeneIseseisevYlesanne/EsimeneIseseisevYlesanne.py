@@ -5,7 +5,7 @@ arv=2
 kasKaivitada = input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)? ")
 if kasKaivitada != "jah":
     print("Süsteemi ei võta tööle!")
-    #sys.exit()
+    sys.exit()
 elif kasKaivitada == "jah":
     print("\n\tSüvaveepump käivitus!\n\t\tHüdrofoori rõhk:")
     
@@ -42,5 +42,5 @@ elif kasKaivitada == "jah":
         kasKraanid = input("\nKas te soovite jätkata (jah/ei)? ")           
         if kasKraanid != "jah":
             print("Süsteem suleti!")
-            sys.exit()
+            #sys.exit()
     
