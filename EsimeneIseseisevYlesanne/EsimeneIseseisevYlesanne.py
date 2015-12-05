@@ -19,7 +19,7 @@ elif kasKaivitada == "jah":
     
     if kasKraanid != "jah":
         print("\tKraane lahti ei keeratud!")
-        sys.exit()
+        #sys.exit()
     while kasKraanid == "jah":
         
         if arv % 2 == 0:
