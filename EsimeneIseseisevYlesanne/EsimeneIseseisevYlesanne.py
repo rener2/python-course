@@ -17,7 +17,7 @@ elif kasKaivitada == "jah":
     kasKraanid = input("\nKas keerata kraanid lahti (jah/ei)?")
 
     if kasKraanid != "jah":
-        print("\tKraane lahti ei keeratud!")
+        print("Kraane lahti ei keeratud!")
         
     while kasKraanid == "jah":
         
@@ -38,7 +38,7 @@ elif kasKaivitada == "jah":
                 rohk = round(rohk,2)
                 print("\t[Töötab]", veeTarbimine,"[Tõuseb] : %.2f bar"%rohk)
         arv +=1
-        kasKraanid = input("\nKas te soovite jätkata(jah/ei)? ")           
+        kasKraanid = input("\nKas soovite jätkata (jah/ei)? ")           
         if kasKraanid != "jah":
             print("Süsteem suleti!")
             
