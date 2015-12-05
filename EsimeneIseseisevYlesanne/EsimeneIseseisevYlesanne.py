@@ -1,11 +1,10 @@
 rohk =1.65
 import random
-import sys
 arv=2
-kasKaivitada = input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)? ")
+kasKaivitada = input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)?")
 if kasKaivitada != "jah":
     print("Süsteemi ei võta tööle!")
-    sys.exit()
+    
 elif kasKaivitada == "jah":
     print("\n\tSüvaveepump käivitus!\n\t\tHüdrofoori rõhk:")
     
@@ -19,7 +18,7 @@ elif kasKaivitada == "jah":
     
     if kasKraanid != "jah":
         print("\tKraane lahti ei keeratud!")
-        sys.exit()
+        
     while kasKraanid == "jah":
         
         if arv % 2 == 0:
@@ -42,5 +41,5 @@ elif kasKaivitada == "jah":
         kasKraanid = input("\nKas te soovite jätkata (jah/ei)? ")           
         if kasKraanid != "jah":
             print("Süsteem suleti!")
-            #sys.exit()
+            
     
