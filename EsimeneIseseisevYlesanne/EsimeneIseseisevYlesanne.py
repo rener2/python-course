@@ -13,10 +13,10 @@ elif kasKaivitada == "jah":
         print("\t\t\t{0} bar".format(rohk))
         rohk = float(rohk)
     print("\tSüvaveepump seiskus!")
-    kasKraanid = input("\nKas keerata kraanid l? ")
+    kasKraanid = input("\nKas keerata kraanid lahti (jah/ei)? ")
     
     if kasKraanid != "jah":
-        print("\tKraane lahti ei keeratud!")
+        print("\tKraane lahti ei kee")
         
     while kasKraanid == "jah":
         
