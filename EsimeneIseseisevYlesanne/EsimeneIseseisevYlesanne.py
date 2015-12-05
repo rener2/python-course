@@ -14,7 +14,7 @@ elif kasKaivitada == "jah":
         rohk = float(rohk)
     print("\tSüvaveepump seiskus!")
     
-    kasKraanid = input("\n\tKas keerata kraanid lahti (jah/ei)?")
+    kasKraanid = input("\nKas keerata kraanid lahti (jah/ei)?")
 
     if kasKraanid != "jah":
         print("\tKraane lahti ei keeratud!")
@@ -38,7 +38,7 @@ elif kasKaivitada == "jah":
                 rohk = round(rohk,2)
                 print("\t[Töötab]", veeTarbimine,"[Tõuseb] : %.2f bar"%rohk)
         arv +=1
-        kasKraanid = input("\nKas te soovite jätkata (jah/ei)? ")           
+        kasKraanid = input("\nKas te soovite jätka ")           
         if kasKraanid != "jah":
             print("Süsteem suleti!")
             
