@@ -1,7 +1,6 @@
 rohk =1.65
 import random
 arv=2
-
 kasKaivitada = input("Süsteem on ülesse seatud - kas käivitada süsteem (jah/ei)? ")
 if kasKaivitada != "jah":
     print("Süsteemi ei võta tööle!")
@@ -41,3 +40,4 @@ elif kasKaivitada == "jah":
         kasKraanid = input("\nKas te soovite jätkata (jah/ei)? ")           
         if kasKraanid != "jah":
             print("Süsteem suleti!")
+            #dd
