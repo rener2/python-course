@@ -10,15 +10,15 @@ elif kasKaivitada == "jah":
     while rohk <= 2.80:
         rohk += 0.15
         rohk = "%.2f"%rohk
-        print("\t\t\t{0}bar".format(rohk))
+        print("\t\t\t{0} bar".format(rohk))
         rohk = float(rohk)
     print("\tSüvaveepump seiskus!")
-    kasKraanid = input("\nKas keerata kraanid lahti (jah/ei)? ")
+    kasKraanid = input("\nKas keerata kraanid lahti (jah/ei)?")
     
-    if kasKraanid != "jah":
+    if kasKraanid.lower() != "jah":
         print("\tKraane lahti ei keeratud!")
         
-    while kasKraanid == "jah":
+    while kasKraanid.lower() == "jah":
         
         if arv % 2 == 0:
             while 1.85<=rohk:
