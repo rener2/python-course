@@ -38,7 +38,7 @@ elif kasKaivitada == "jah":
                 rohk = round(rohk,2)
                 print("\t[Töötab]", veeTarbimine,"[Tõuseb] : %.2f bar"%rohk)
         arv +=1
-        kasKraanid = input("\nKas te soovite jätka ")           
+        kasKraanid = input("\nKas te soovite jätkata(jah/ei)? ")           
         if kasKraanid != "jah":
             print("Süsteem suleti!")
             
