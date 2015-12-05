@@ -17,7 +17,7 @@ elif kasKaivitada == "jah":
     kasKraanid = input("\nKas keerata kraanid lahti (jah/ei)?")
 
     if kasKraanid != "jah":
-        print("Kraane lahti ei keeratud!")
+        print("\nKraane lahti ei keeratud!") ## \t
         
     while kasKraanid == "jah":
         
