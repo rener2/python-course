@@ -6,7 +6,7 @@ if kasKaivitada != "jah":
     print("Süsteemi ei võeta tööle!")
     
 elif kasKaivitada == "jah":
-    print("\n\tSüvaveepump käivitus!\n\t\tHüdrofoori rõhk:")
+    print("\tSüvaveepump käivitus!\n\t\tHüdrofoori rõhk:")   #    print("\n\tSüvaveepump käivitus!\n\t\tHüdrofoori rõhk:")
     while rohk <= 2.80:
         rohk += 0.15
         rohk = "%.2f"%rohk
