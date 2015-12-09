@@ -3,7 +3,7 @@ import datetime
 import sys
 
 
-
+#ddddd
 
 def valikvastus():
     """Funktsioon laseb kasutajal valida 4 sisendi vahel ja 
