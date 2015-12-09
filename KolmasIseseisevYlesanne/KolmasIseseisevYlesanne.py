@@ -105,7 +105,7 @@ def sulge_programm():
 
 
 def current_time():
-    aeg=strftime("%Y-%m-%d %H:%M:%S", gmtime()).replace("-",".")
+    aeg=strftime("%d.%m.%y %H:%M:%S", gmtime())
     return aeg
 #def current_time():
 #    """Funktsioon võtab antud aja
