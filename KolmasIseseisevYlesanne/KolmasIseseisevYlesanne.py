@@ -1,7 +1,7 @@
 import string
 #import datetime
 import sys
-from time import gmtime, strftime
+from time import localtime, strftime
 
 
 def valikvastus():
@@ -105,7 +105,7 @@ def sulge_programm():
 
 
 def current_time():
-    aeg=strftime("%d.%m.%y %H:%M:%S", gmtime())
+    aeg=strftime("%d.%m.%Y %H:%M:%S", localtime())
     return aeg
 #def current_time():
 #    """Funktsioon võtab antud aja
