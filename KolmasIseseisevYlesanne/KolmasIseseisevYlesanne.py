@@ -82,6 +82,7 @@ def kuva_sademeid():
     uuesti valikvastus() funktsiooni"""
     fail=open("andmebaas.txt","r",encoding="utf-8")
     print("\tAndmebaasi sisu:")
+    print("")
     sisu=fail.readlines()
     for i in sisu:
         print("\t\t",i[:-1])
@@ -105,7 +106,7 @@ def sulge_programm():
 
 
 def current_time():
-    aeg=strftime("%d.%m.%Y %H: %M: %S", localtime())
+    aeg=strftime("%d.%m.%Y %H:%M:%S", localtime())
     return aeg
 #def current_time():
 #    """Funktsioon võtab antud aja
