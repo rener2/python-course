@@ -18,7 +18,7 @@ def valikvastus():
 def lisa_salvesta():
     """Funktsioon lisab anbmebaasi faili kasutaja sisestatud andmed, kui andmed
     on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni"""
-    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),current_time()
+    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
     if sisend == 'C' or sisend == 'c':
         print("")
         return valikvastus()
@@ -33,7 +33,7 @@ def lisa_salvesta():
 
 def muuda(muudetava_indeks):
     """Muudab andmebaasi sisu antud indeksi ja uue sisu järgi"""
-    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),current_time()
+    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
     if sisend == "C" or sisend == "c": return sisend
     if check_brackets(sisend) == False: return muuda(muudetava_indeks)
     sisend=aeg+" - "+sisend+"\n"
@@ -82,7 +82,6 @@ def kuva_sademeid():
     uuesti valikvastus() funktsiooni"""
     fail=open("andmebaas.txt","r",encoding="utf-8")
     print("\tAndmebaasi sisu:")
-    print("")
     sisu=fail.readlines()
     for i in sisu:
         print("\t\t",i[:-1])
@@ -108,19 +107,6 @@ def sulge_programm():
 def current_time():
     aeg=strftime("%d.%m.%Y %H:%M:%S", localtime())
     return aeg
-#def current_time():
-#    """Funktsioon võtab antud aja
- #   kasutan sisendi aja võtmiseks"""
-  #  aeg=datetime.datetime.now().isoformat()
-   # aeg=aeg[0:19]
-#    aeg=aeg.replace("-",".")
- #   aeg=aeg.replace("T"," ")
-  #  aasta=aeg[0:4]
-   # kuu=aeg[5:7]
-    #paev=aeg[8:10]
-    #kell=aeg[11:]
-#    aeg="{0}.{1}.{2} {3}".format(paev,kuu,aasta,kell)
- #   return aeg
 
 
 def check_brackets(sentence):
