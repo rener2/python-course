@@ -14,7 +14,7 @@ elif kasKaivitada == "jah":
         rohk = float(rohk)
     print("\tSüvaveepump seiskus!")
     
-    kasKraanid = input("\nKas keerata kraanid lahti (jah/ei)?")
+    kasKraanid = input("\nKas keerata kraanid lahti (jah/ei)? ")
 
     if kasKraanid != "jah":
         print("Kraane lahti ei keeratud!") # \t
