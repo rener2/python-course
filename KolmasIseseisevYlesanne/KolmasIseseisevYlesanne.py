@@ -1,9 +1,8 @@
 import string
-import datetime
+#import datetime
 import sys
+from time import gmtime, strftime
 
-
-#ddddd
 
 def valikvastus():
     """Funktsioon laseb kasutajal valida 4 sisendi vahel ja 
@@ -104,21 +103,23 @@ def sulge_programm():
         valik=valikvastus()
         return valik
 
-    
+
 def current_time():
-    """Funktsioon võtab antud aja
-    kasutan sisendi aja võtmiseks"""
-    aeg=datetime.datetime.now().isoformat()
-    aeg=aeg[0:19]
-    aeg=aeg.replace("-",".")
-    aeg=aeg.replace("T"," ")
-    aasta=aeg[0:4]
-    kuu=aeg[5:7]
-    paev=aeg[8:10]
-    kell=aeg[11:]
-    kell=kell.replace(":",": ")
-    aeg="{0}.{1}.{2} {3}".format(paev,kuu,aasta,kell)
+    aeg=strftime("%Y-%m-%d %H:%M:%S", gmtime()).replace("-",".")
     return aeg
+#def current_time():
+#    """Funktsioon võtab antud aja
+ #   kasutan sisendi aja võtmiseks"""
+  #  aeg=datetime.datetime.now().isoformat()
+   # aeg=aeg[0:19]
+#    aeg=aeg.replace("-",".")
+ #   aeg=aeg.replace("T"," ")
+  #  aasta=aeg[0:4]
+   # kuu=aeg[5:7]
+    #paev=aeg[8:10]
+    #kell=aeg[11:]
+#    aeg="{0}.{1}.{2} {3}".format(paev,kuu,aasta,kell)
+ #   return aeg
 
 
 def check_brackets(sentence):
