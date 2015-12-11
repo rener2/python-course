@@ -23,7 +23,7 @@ def lisa_salvesta():
         return valikvastus()
     if check_brackets(sisend)==False: return lisa_salvesta()
     fail=open("andmebaas.txt","a",encoding="utf-8")
-    fail.write("\t\t"+aeg+" - "+sisend+"\n")
+    fail.write(aeg+" - "+sisend+"\n")
     fail.close()
     print("\tSade fikseeritud!\n")
     valik=valikvastus()
@@ -35,7 +35,7 @@ def muuda(muudetava_indeks):
     sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
     if sisend == "C" or sisend == "c": return sisend
     if check_brackets(sisend) == False: return muuda(muudetava_indeks)
-    sisend="\t\t"+aeg+" - "+sisend+"\n"
+    sisend=aeg+" - "+sisend+"\n"
     fail=open("andmebaas.txt","r",encoding="utf-8")
     sisu=fail.readlines()
     sisu.pop(muudetava_indeks)
@@ -59,7 +59,7 @@ def muuda_sadet():
     arv=1
     print("\tAndmebaasis olevad andmed:")
     for i in sisu:
-        print("{0}. {1}".format(arv,i[22:-1]))
+        print("\t\t{0}.{1}".format(arv,i[22:-1]))
         arv+=1
     print("")
     fail.close()
@@ -83,7 +83,7 @@ def kuva_sademeid():
     print("\tAndmebaasi sisu:\n")
     sisu=fail.readlines()
     for i in sisu:
-        print(i[:-1])
+        print("\t\t",i[:-1])
     fail.close()
     valik=valikvastus()
     return valik
