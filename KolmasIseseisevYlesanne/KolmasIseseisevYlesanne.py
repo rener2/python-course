@@ -33,7 +33,9 @@ def lisa_salvesta():
 def muuda(muudetava_indeks):
     """Muudab andmebaasi sisu antud indeksi ja uue sisu järgi"""
     sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
-    if sisend == "C" or sisend == "c": return sisend
+    if sisend == "C" or sisend == "c":
+        print("")
+        return valikvastus()
     if check_brackets(sisend) == False: return muuda(muudetava_indeks)
     sisend=aeg+" - "+sisend+"\n"
     fail=open("andmebaas.txt","r",encoding="utf-8")
@@ -46,7 +48,6 @@ def muuda(muudetava_indeks):
     fail.write(sisu)
     print("\tSademe kirje on uuendatud!\n")
     fail.close()
-    valik=valikvastus()
     return valik
 
 
