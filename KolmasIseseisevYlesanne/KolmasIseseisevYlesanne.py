@@ -7,7 +7,7 @@ def valikvastus():
     """Funktsioon laseb kasutajal valida 4 sisendi vahel ja 
     tagastab sisestatud väärtuse"""
     valikud=("L","M","P","E")        
-    valik = input("Sisestage soovitud valik (L, M, P, E): ")
+    valik = input("\nSisestage soovitud valik (L, M, P, E): ")
     valik=valik.upper()
     if valik not in valikud: return valikvastus()
     elif valik in valikud: print("")
@@ -18,24 +18,19 @@ def lisa_salvesta():
     """Funktsioon lisab anbmebaasi faili kasutaja sisestatud andmed, kui andmed
     on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni"""
     sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
-    if sisend == 'C' or sisend == 'c':
-        print("")
-        return valikvastus()
+    if sisend == 'C' or sisend == 'c':return valikvastus()
     if check_brackets(sisend)==False: return lisa_salvesta()
     fail=open("andmebaas.txt","a",encoding="utf-8")
     fail.write(aeg+" - "+sisend+"\n")
     fail.close()
-    print("\tSade fikseeritud!\n")
-    valik=valikvastus()
-    return valik
+    print("\tSade fikseeritud!")
+    return valikvastus()
 
 
 def muuda(muudetava_indeks):
     """Muudab andmebaasi sisu antud indeksi ja uue sisu järgi"""
     sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
-    if sisend == "C" or sisend == "c":
-        print("")
-        return valikvastus()
+    if sisend == "C" or sisend == "c":return valikvastus()
     if check_brackets(sisend) == False: return muuda(muudetava_indeks)
     sisend=aeg+" - "+sisend+"\n"
     fail=open("andmebaas.txt","r",encoding="utf-8")
@@ -46,9 +41,9 @@ def muuda(muudetava_indeks):
     fail.close()
     fail=open("andmebaas.txt","w",encoding="utf-8")
     fail.write(sisu)
-    print("\tSademe kirje on uuendatud!\n")
+    print("\tSademe kirje on uuendatud!")
     fail.close()
-    return valik
+    return valikvastus()
 
 
 def muuda_sadet(): 
@@ -67,9 +62,7 @@ def muuda_sadet():
     sisend=""
     while sisend.isdigit() == False or int(sisend)> len(sisu) or int(sisend) < 1:
         sisend=input("\tSisestage sademe indeks, mida soovite muuta (C): ")
-        if sisend =='C' or sisend == 'c':
-            print("")
-            return valikvastus()
+        if sisend =='C' or sisend == 'c':return valikvastus()
         if sisend.isdigit() == True:
             if int(sisend) < 1 or int(sisend) > len(sisu):
                 print("\t\tSisestatud sademe indeksit ei eksisteeri andmebaasis!")
@@ -85,10 +78,8 @@ def kuva_sademeid():
     sisu=fail.readlines()
     for i in sisu:
         print("\t\t",i[:-1])
-    print("")
     fail.close()
-    valik=valikvastus()
-    return valik
+    return valikvastus()
 
     
 def sulge_programm():
@@ -99,9 +90,7 @@ def sulge_programm():
         print("\tProgramm läks kinni!")
         sys.exit()
     else:
-        print("")
-        valik=valikvastus()
-        return valik
+        return valikvastus()
 
 
 def check_brackets(sentence):
@@ -135,7 +124,7 @@ def check_brackets(sentence):
 print("""L - Sademete lisamine andmebaasi.
 M - Andmebaasis oleva sademe muutmine.
 P - Andmebaasis asuvate sademete kuvamine.
-E - Programmi sulgemine.\n""")
+E - Programmi sulgemine.""")
 valik=valikvastus()
 while True:    
     if valik == 'L':
