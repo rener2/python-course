@@ -23,7 +23,7 @@ def lisa_salvesta():
         return valikvastus()
     if check_brackets(sisend)==False: return lisa_salvesta()
     fail=open("andmebaas.txt","a",encoding="utf-8")
-    fail.write(aeg+" - "+sisend+"\t")
+    fail.write(aeg+" - "+sisend+"\t\n")
     fail.close()
     print("\tSade fikseeritud!\t\n")
     valik=valikvastus()
