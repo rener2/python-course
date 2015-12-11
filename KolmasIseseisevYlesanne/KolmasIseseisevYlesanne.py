@@ -81,10 +81,10 @@ def kuva_sademeid():
     uuesti valikvastus() funktsiooni"""
     fail=open("andmebaas.txt","r",encoding="utf-8")
     print("\tAndmebaasi sisu:")
-    print("")
     sisu=fail.readlines()
     for i in sisu:
         print("\t\t",i[:-1])
+    print("")
     fail.close()
     valik=valikvastus()
     return valik
