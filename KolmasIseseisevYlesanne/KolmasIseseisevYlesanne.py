@@ -17,13 +17,13 @@ def valikvastus():
 def lisa_salvesta():
     """Funktsioon lisab anbmebaasi faili kasutaja sisestatud andmed, kui andmed
     on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni"""
-    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
+    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y%H:%M:%S", localtime())
     if sisend == 'C' or sisend == 'c':
         print("")
         return valikvastus()
     if check_brackets(sisend)==False: return lisa_salvesta()
     fail=open("andmebaas.txt","a",encoding="utf-8")
-    fail.write(aeg+"-"+sisend+"\n")
+    fail.write(aeg+" - "+sisend+"\n")
     fail.close()
     print("\tSade fikseeritud!\n")
     valik=valikvastus()
@@ -32,10 +32,10 @@ def lisa_salvesta():
 
 def muuda(muudetava_indeks):
     """Muudab andmebaasi sisu antud indeksi ja uue sisu järgi"""
-    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
+    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y%H:%M:%S", localtime())
     if sisend == "C" or sisend == "c": return sisend
     if check_brackets(sisend) == False: return muuda(muudetava_indeks)
-    sisend=aeg+"-"+sisend+"\n"
+    sisend=aeg+" - "+sisend+"\n"
     fail=open("andmebaas.txt","r",encoding="utf-8")
     sisu=fail.readlines()
     sisu.pop(muudetava_indeks)
@@ -80,11 +80,10 @@ def kuva_sademeid():
     """Funktsioon avab faili ja kuvab selle sisu ridade kaupa, lõpus läheb
     uuesti valikvastus() funktsiooni"""
     fail=open("andmebaas.txt","r",encoding="utf-8")
-    print("\tAndmebaasi sisu:")
+    print("\tAndmebaasi sisu:\n")
     sisu=fail.readlines()
     for i in sisu:
         print("\t\t",i[:-1])
-    print("")
     fail.close()
     valik=valikvastus()
     return valik
