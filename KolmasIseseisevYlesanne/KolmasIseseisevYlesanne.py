@@ -84,7 +84,7 @@ def kuva_sademeid():
     sisu=fail.readlines()
     for i in sisu:
         print("\t\t",i[:-1])
-    #print("")
+    print("")
     fail.close()
     valik=valikvastus()
     return valik
