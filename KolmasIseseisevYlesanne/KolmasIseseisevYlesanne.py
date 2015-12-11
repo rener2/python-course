@@ -17,7 +17,7 @@ def valikvastus():
 def lisa_salvesta():
     """Funktsioon lisab anbmebaasi faili kasutaja sisestatud andmed, kui andmed
     on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni"""
-    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y%H:%M:%S", localtime())
+    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
     if sisend == 'C' or sisend == 'c':
         print("")
         return valikvastus()
@@ -32,7 +32,7 @@ def lisa_salvesta():
 
 def muuda(muudetava_indeks):
     """Muudab andmebaasi sisu antud indeksi ja uue sisu järgi"""
-    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y%H:%M:%S", localtime())
+    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
     if sisend == "C" or sisend == "c": return sisend
     if check_brackets(sisend) == False: return muuda(muudetava_indeks)
     sisend=aeg+" - "+sisend+"\n"
