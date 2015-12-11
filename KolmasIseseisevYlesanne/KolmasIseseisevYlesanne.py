@@ -55,7 +55,7 @@ def muuda_sadet():
     arv=1
     print("\tAndmebaasis olevad andmed:")
     for i in sisu:
-        print("\t\t{0}.{1}".format(arv,i[21:-1])) 
+        print("\t\t{0}.{1}".format(arv,i[21:])) 
         arv+=1
     print("")
     fail.close()
