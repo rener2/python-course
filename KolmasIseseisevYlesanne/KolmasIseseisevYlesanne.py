@@ -136,3 +136,4 @@ while True:
         valik=kuva_sademeid()
     elif valik == 'E':
         valik=sulge_programm()
+##
