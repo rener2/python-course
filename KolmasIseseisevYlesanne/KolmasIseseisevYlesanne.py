@@ -80,7 +80,8 @@ def kuva_sademeid():
     """Funktsioon avab faili ja kuvab selle sisu ridade kaupa, lõpus läheb
     uuesti valikvastus() funktsiooni"""
     fail=open("andmebaas.txt","r",encoding="utf-8")
-    print("\tAndmebaasi sisu:\n")
+    print("\tAndmebaasis olevad andmed:")
+    print("")
     sisu=fail.readlines()
     for i in sisu:
         print("\t\t",i[:-1])
