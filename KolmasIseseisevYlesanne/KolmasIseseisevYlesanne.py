@@ -55,7 +55,7 @@ def muuda_sadet():
     arv=1
     print("\tAndmebaasis olevad andmed:")
     for i in sisu:
-        print("\t\t{0}. {1}".format(arv,i[22:-1])) 
+        print("\t\t{0}.{1}".format(arv,i[21:-1])) 
         arv+=1
     print("")
     fail.close()
@@ -117,10 +117,9 @@ def check_brackets(sentence):
     if a == True and b == True:return True    
     else:return False
     
-    
 
 
-    
+
 print("""L - Sademete lisamine andmebaasi.
 M - Andmebaasis oleva sademe muutmine.
 P - Andmebaasis asuvate sademete kuvamine.
@@ -135,4 +134,3 @@ while True:
         valik=kuva_sademeid()
     elif valik == 'E':
         valik=sulge_programm()
-
