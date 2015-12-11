@@ -55,7 +55,7 @@ def muuda_sadet():
     arv=1
     print("\tAndmebaasis olevad andmed:")
     for i in sisu:
-        print("\t\t{0}.{1}".format(arv,i[21:])) 
+        print("\t\t{0}.{1}".format(arv,i[21:-1])) 
         arv+=1
     print("")
     fail.close()
@@ -75,9 +75,11 @@ def kuva_sademeid():
     uuesti valikvastus() funktsiooni"""
     fail=open("andmebaas.txt","r",encoding="utf-8")
     print("\tAndmebaasi sisu:")
-    sisu=fail.readlines()
-    for i in sisu:
-        print("\t\t",i[:-1])
+    sisu=fail.read()#
+    print(sisu)
+    #sisu=fail.readlines()
+    #for i in sisu:
+    #    print("\t\t",i[:-1])
     fail.close()
     return valikvastus()
 
@@ -89,8 +91,7 @@ def sulge_programm():
     if sisend.upper()=="JAH":
         print("\tProgramm läks kinni!")
         sys.exit()
-    else:
-        return valikvastus()
+    else:return valikvastus()
 
 
 def check_brackets(sentence):
