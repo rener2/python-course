@@ -8,8 +8,9 @@ import random
 
 
 def reklaam_start(taust):
-    """Sulgeb eelmise akna, loob ühtlasi ka uue akna,
-    milles reklaam käivitub ja loob ka jõuluvana, lume ja kingi pildid"""
+    """Closes the previous window and creates a new one for the commercial,
+    also creates pictures of santa, snow and gifts.
+    """
     taust.destroy()
     aken = Tk()
     aken.title("Reklaam")
@@ -30,7 +31,7 @@ def reklaam_start(taust):
 
 
 def pilve_pildid():
-    """Laeb alla kaks erinevat pildi pilvede jaoks ja väljastab need pildid"""
+    """Load two pictures of clouds and return them."""
     pilve_pilt = PhotoImage(file="vihmaPilv.png")
     pilve_pilt = pilve_pilt.subsample(4, 4)
     teine_pilv = PhotoImage(file="tavalinePilv.png")
@@ -39,8 +40,9 @@ def pilve_pildid():
 
 
 def loo_pilv(aken, pildi_list, mitu_pilve):
-    """Loob soovitud arvu pilvi ja lõpus käivitab pilvede
-    liikuma panemiseks vastava funktsiooni"""
+    """Create desired amount of clouds and make them move
+    by calling out another function.
+    """
     arv = 0
     pilve_koht_x = 0
     while mitu_pilve != arv:
@@ -57,8 +59,9 @@ def loo_pilv(aken, pildi_list, mitu_pilve):
 
 
 def liiguta_pilve(pilv, positsioon_x, positsioon_y, kiirus, aken, pildi_list):
-    """Liigutab pilvi vasakult paremale ja kui pilv kaob vaateväljast
-    siis käivitab uue pilve loomise funktsiooni"""
+    """Move clouds and create new clouds if they have moved
+    out of sight.
+    """
     pilv.place(x=positsioon_x, y=positsioon_y)
     if positsioon_x < 800:
         pilv.after(kiirus, liiguta_pilve, pilv, positsioon_x+1, positsioon_y, kiirus, aken, pildi_list)
@@ -68,8 +71,9 @@ def liiguta_pilve(pilv, positsioon_x, positsioon_y, kiirus, aken, pildi_list):
 
 
 def jouluvana(aken, vana_pilt):
-    """Loob jõuluvana ja teksti, mida jõuluvana hiljem saaniga veab,
-    ühtlasi käivitab ka fukntsiooni, mis jõuluvana liikuma paneb tekstiga"""
+    """Create santa and a message, initiate a function that makes
+    santa's sleigh move with a message behind him.
+    """
     vana = Canvas(aken, width=90, height=70, bg="blue", highlightthickness=0)
     vana.create_image(45, 35, image=vana_pilt)
     vana.pack()
@@ -79,7 +83,7 @@ def jouluvana(aken, vana_pilt):
 
 
 def vana_liikuma(vana, positsioon_x, positsioon_y, tekst):
-    """Paneb jõuluvana saaniga liikuma ja teksti lohistama tema taga"""
+    """Make santa's sleigh move and a message move behind him."""
     vana.place(x=positsioon_x, y=positsioon_y)
     if 200 <= positsioon_x:
         tekst.place(x=positsioon_x+100, y=positsioon_y+40)
@@ -87,7 +91,9 @@ def vana_liikuma(vana, positsioon_x, positsioon_y, tekst):
 
 
 def loo_lumi(aken, lume_pilt, kingi_pilt):
-    """Loob lume helbeid ja käivitab lumesaju funktsiooni"""
+    """Create new snow, gifts and make it snow by calling
+    out snowing function.
+    """
     lumi = Canvas(aken, bg="Blue", highlightthickness=0, width=20, height=20)
     pilt = [lume_pilt, kingi_pilt]
     pilt = random.choice(pilt)
@@ -99,7 +105,7 @@ def loo_lumi(aken, lume_pilt, kingi_pilt):
 
 
 def lumesadu(aken, lumi, positsioon_x, positsioon_y):
-    """Paneb lume sadama"""
+    """Make it snow snowflakes and gifts."""
     lumi.place(x=positsioon_x, y=positsioon_y)
     if positsioon_y <= 520:
         lumi.after(50, lumesadu, aken, lumi, positsioon_x, positsioon_y+1)
@@ -108,7 +114,9 @@ def lumesadu(aken, lumi, positsioon_x, positsioon_y):
 
 
 def nupp_start():
-    """Loob nupu ja akna, millest saab käivitada reklaami"""
+    """Create a button which will start the commercial and a window,
+     for the button.
+     """
     taust = Tk()
     taust.title("Click me!")
     taust["bg"] = "Blue"
