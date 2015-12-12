@@ -4,11 +4,13 @@ __author__ = 'Rene Räkk'
 
 from tkinter import *
 from turtle import *
-import time
 import random
 
 
-def reklaam_start():
+def reklaam_start(taust):
+    """Sulgeb eelmise akna, loob ühtlasi ka uue akna,
+    milles reklaam käivitub ja loob ka jõuluvana, lume ja kingi pildid"""
+    taust.destroy()
     aken = Tk()
     aken.title("Reklaam")
     aken.geometry("720x480")
@@ -24,11 +26,11 @@ def reklaam_start():
     loo_pilv(aken, pilve_list, 7)
     jouluvana(aken, vana_pilt)
     loo_lumi(aken, lume_pilt, kingi_pilt)
-
     aken.mainloop()
 
 
 def pilve_pildid():
+    """Laeb alla kaks erinevat pildi pilvede jaoks ja väljastab need pildid"""
     pilve_pilt = PhotoImage(file="vihmaPilv.png")
     pilve_pilt = pilve_pilt.subsample(4, 4)
     teine_pilv = PhotoImage(file="tavalinePilv.png")
@@ -37,6 +39,8 @@ def pilve_pildid():
 
 
 def loo_pilv(aken, pildi_list, mitu_pilve):
+    """Loob soovitud arvu pilvi ja lõpus käivitab pilvede
+    liikuma panemiseks vastava funktsiooni"""
     arv = 0
     pilve_koht_x = 0
     while mitu_pilve != arv:
@@ -53,14 +57,19 @@ def loo_pilv(aken, pildi_list, mitu_pilve):
 
 
 def liiguta_pilve(pilv, positsioon_x, positsioon_y, kiirus, aken, pildi_list):
+    """Liigutab pilvi vasakult paremale ja kui pilv kaob vaateväljast
+    siis käivitab uue pilve loomise funktsiooni"""
     pilv.place(x=positsioon_x, y=positsioon_y)
-    if positsioon_x < 720:
+    if positsioon_x < 800:
         pilv.after(kiirus, liiguta_pilve, pilv, positsioon_x+1, positsioon_y, kiirus, aken, pildi_list)
-    if positsioon_x == 720:
+    if positsioon_x == 800:
+        pilv.delete("all")
         loo_pilv(aken, pildi_list, 1)
 
 
 def jouluvana(aken, vana_pilt):
+    """Loob jõuluvana ja teksti, mida jõuluvana hiljem saaniga veab,
+    ühtlasi käivitab ka fukntsiooni, mis jõuluvana liikuma paneb tekstiga"""
     vana = Canvas(aken, width=90, height=70, bg="blue", highlightthickness=0)
     vana.create_image(45, 35, image=vana_pilt)
     vana.pack()
@@ -70,6 +79,7 @@ def jouluvana(aken, vana_pilt):
 
 
 def vana_liikuma(vana, positsioon_x, positsioon_y, tekst):
+    """Paneb jõuluvana saaniga liikuma ja teksti lohistama tema taga"""
     vana.place(x=positsioon_x, y=positsioon_y)
     if 200 <= positsioon_x:
         tekst.place(x=positsioon_x+100, y=positsioon_y+40)
@@ -77,6 +87,7 @@ def vana_liikuma(vana, positsioon_x, positsioon_y, tekst):
 
 
 def loo_lumi(aken, lume_pilt, kingi_pilt):
+    """Loob lume helbeid ja käivitab lumesaju funktsiooni"""
     lumi = Canvas(aken, bg="Blue", highlightthickness=0, width=20, height=20)
     pilt = [lume_pilt, kingi_pilt]
     pilt = random.choice(pilt)
@@ -88,22 +99,23 @@ def loo_lumi(aken, lume_pilt, kingi_pilt):
 
 
 def lumesadu(aken, lumi, positsioon_x, positsioon_y):
+    """Paneb lume sadama"""
     lumi.place(x=positsioon_x, y=positsioon_y)
-    lumi.after(50, lumesadu, aken, lumi, positsioon_x, positsioon_y+1)
-
-
-def nupp(aken):
-    button = Button(aken, text="Tasuta reklaam!", relief="raised", command=reklaam_start)
-    button.place(x=360, y=240)
+    if positsioon_y <= 520:
+        lumi.after(50, lumesadu, aken, lumi, positsioon_x, positsioon_y+1)
+    if 520 <= positsioon_y:
+        lumi.delete("all")
 
 
 def nupp_start():
-    aken = Tk()
-    aken.title("Click me!")
-    aken.geometry("720x480")
-    aken["bg"] = "Blue"
-    aken.grid()
-    nupp(aken)
-    aken.mainloop()
+    """Loob nupu ja akna, millest saab käivitada reklaami"""
+    taust = Tk()
+    taust.title("Click me!")
+    taust["bg"] = "Blue"
+    button = Button(taust, text="Tasuta reklaam!", relief="raised", command=lambda:reklaam_start(taust))
+    button.flash()
+    button.pack()
+    taust.mainloop()
 
-reklaam_start()
+
+nupp_start()
