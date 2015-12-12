@@ -7,8 +7,7 @@ import random
 
 
 def reklaam_start(taust):
-    """Closes the previous window and creates a new one for the commercial.
-    Creates pictures of santa, snow and gifts.
+    """Close the previous window and create a new one for the commercial.
 
     The previous window will be closed after the button is pressed. Pictures
     are made for functions and functions are being called out for the commercial.
@@ -62,7 +61,7 @@ def liiguta_pilve(pilv, positsioon_x, positsioon_y, kiirus, aken, pildi_list):
     """Move clouds and create new clouds."""
     pilv.place(x=positsioon_x, y=positsioon_y)
     if positsioon_x < 800:
-        pilv.after(kiirus, liiguta_pilve, pilv, positsioon_x+1, positsioon_y, kiirus, aken, pildi_list)
+        pilv.after(kiirus, liiguta_pilve, pilv, positsioon_x + 1, positsioon_y, kiirus, aken, pildi_list)
     if positsioon_x == 800:
         pilv.delete("all")
         loo_pilv(aken, pildi_list, 1)
@@ -84,9 +83,9 @@ def vana_liikuma(vana, positsioon_x, positsioon_y, tekst):
     varvid = ("red", "white", "purple", "brown", "black", "orange")
     varv = random.choice(varvid)
     if 100 <= positsioon_x:
-        tekst.place(x=positsioon_x+100, y=positsioon_y+40)
+        tekst.place(x=positsioon_x + 100, y=positsioon_y + 40)
     tekst["fg"] = varv
-    vana.after(15, vana_liikuma, vana, positsioon_x-1, positsioon_y, tekst)
+    vana.after(15, vana_liikuma, vana, positsioon_x - 1, positsioon_y, tekst)
 
 
 def loo_lumi(aken, lume_pilt, kingi_pilt):
@@ -105,7 +104,7 @@ def lumesadu(aken, lumi, positsioon_x, positsioon_y):
     """Make it snow snowflakes and gifts."""
     lumi.place(x=positsioon_x, y=positsioon_y)
     if positsioon_y <= 520:
-        lumi.after(50, lumesadu, aken, lumi, positsioon_x, positsioon_y+1)
+        lumi.after(50, lumesadu, aken, lumi, positsioon_x, positsioon_y + 1)
     if 520 <= positsioon_y:
         lumi.delete("all")
 
@@ -123,7 +122,7 @@ def nupp_start():
 
 
 def nupp_varv(button):
-    """Changes the color of the buttons background."""
+    """Change the color of the buttons background."""
     varvid = ("green", "orange", "grey", "white", "purple")
     varv = random.choice(varvid)
     button["bg"] = varv
