@@ -1,6 +1,8 @@
 __author__ = 'Rene Räkk'
 # -*- coding: utf-8 -*-
-"""Commercial of a christmas store advertising their sale, commercial opens after a button is pressed."""
+"""This is a script of a commercial about a sale in a store that sells christmas presents.
+The script starts with a user having to press a button.
+After the button has been pressed the commercial starts and closes the previous window with the button."""
 
 from tkinter import Canvas, PhotoImage, Tk, Label, Button
 import random
