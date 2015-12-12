@@ -2,14 +2,13 @@ __author__ = 'Rene Räkk'
 # -*- coding: utf-8 -*-
 
 
-from tkinter import *
-from turtle import *
+from tkinter import Canvas, PhotoImage, Tk, Label, Button
 import random
 
 
 def reklaam_start(taust):
-    """Closes the previous window and creates a new one for the commercial,
-    also creates pictures of santa, snow and gifts.
+    """Closes the previous window and creates a new one for the commercial.
+    Creates pictures of santa, snow and gifts.
     """
     taust.destroy()
     aken = Tk()
@@ -40,8 +39,8 @@ def pilve_pildid():
 
 
 def loo_pilv(aken, pildi_list, mitu_pilve):
-    """Create desired amount of clouds and make them move
-    by calling out another function.
+    """Create desired amount of clouds.
+    Call out function to make them move.
     """
     arv = 0
     pilve_koht_x = 0
@@ -59,9 +58,7 @@ def loo_pilv(aken, pildi_list, mitu_pilve):
 
 
 def liiguta_pilve(pilv, positsioon_x, positsioon_y, kiirus, aken, pildi_list):
-    """Move clouds and create new clouds if they have moved
-    out of sight.
-    """
+    """Move clouds and create new clouds."""
     pilv.place(x=positsioon_x, y=positsioon_y)
     if positsioon_x < 800:
         pilv.after(kiirus, liiguta_pilve, pilv, positsioon_x+1, positsioon_y, kiirus, aken, pildi_list)
@@ -71,13 +68,13 @@ def liiguta_pilve(pilv, positsioon_x, positsioon_y, kiirus, aken, pildi_list):
 
 
 def jouluvana(aken, vana_pilt):
-    """Create santa and a message, initiate a function that makes
-    santa's sleigh move with a message behind him.
+    """Create santa and a message.
+    Make both move with another function.
     """
     vana = Canvas(aken, width=90, height=70, bg="blue", highlightthickness=0)
     vana.create_image(45, 35, image=vana_pilt)
     vana.pack()
-    tekst = Label(aken, text="Osta kingid tervele perele meie poest!", bg="blue")
+    tekst = Label(aken, text="Kõik kingid kuni 50% allahinnatud!", bg="blue", font=("Helvetica", 16), fg="white")
     tekst.pack()
     vana_liikuma(vana, 650, 200, tekst)
 
@@ -85,14 +82,17 @@ def jouluvana(aken, vana_pilt):
 def vana_liikuma(vana, positsioon_x, positsioon_y, tekst):
     """Make santa's sleigh move and a message move behind him."""
     vana.place(x=positsioon_x, y=positsioon_y)
-    if 200 <= positsioon_x:
+    varvid = ("red", "white", "purple", "brown", "black", "orange")
+    varv = random.choice(varvid)
+    if 100 <= positsioon_x:
         tekst.place(x=positsioon_x+100, y=positsioon_y+40)
+    tekst["fg"] = varv
     vana.after(15, vana_liikuma, vana, positsioon_x-1, positsioon_y, tekst)
 
 
 def loo_lumi(aken, lume_pilt, kingi_pilt):
-    """Create new snow, gifts and make it snow by calling
-    out snowing function.
+    """Create new snow, gifts.
+    Make both move with another function.
     """
     lumi = Canvas(aken, bg="Blue", highlightthickness=0, width=20, height=20)
     pilt = [lume_pilt, kingi_pilt]
@@ -100,7 +100,7 @@ def loo_lumi(aken, lume_pilt, kingi_pilt):
     positsioon_x = random.randint(0, 780)
     lumi.create_image(9, 9, image=pilt)
     lumi.pack()
-    lumi.after(250, loo_lumi, aken, lume_pilt, kingi_pilt)
+    lumi.after(500, loo_lumi, aken, lume_pilt, kingi_pilt)
     lumesadu(aken, lumi, positsioon_x, 120)
 
 
@@ -114,16 +114,24 @@ def lumesadu(aken, lumi, positsioon_x, positsioon_y):
 
 
 def nupp_start():
-    """Create a button which will start the commercial and a window,
-     for the button.
+    """Create a window and a button.
+    Start the commercial if button is clicked.
      """
     taust = Tk()
     taust.title("Click me!")
-    taust["bg"] = "Blue"
-    button = Button(taust, text="Tasuta reklaam!", relief="raised", command=lambda:reklaam_start(taust))
+    taust["bg"] = "black"
+    button = Button(taust, text="Tasuta reklaam!", relief="raised", command=lambda: reklaam_start(taust))
     button.flash()
-    button.pack()
+    button.pack(fill="both")
+    nupp_varv(button)
     taust.mainloop()
+
+
+def nupp_varv(button):
+    varvid = ("green", "orange", "grey", "white", "purple")
+    varv = random.choice(varvid)
+    button["bg"] = varv
+    button.after(150, nupp_varv, button)
 
 
 nupp_start()
