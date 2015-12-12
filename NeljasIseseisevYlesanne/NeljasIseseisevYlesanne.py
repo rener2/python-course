@@ -3,7 +3,9 @@ __author__ = 'Rene Räkk'
 
 
 from tkinter import Canvas, PhotoImage, Tk, Label, Button
+"""This module is used for creating images, windows, text and a button"""
 import random
+"""This module is used for a random choice between colors"""
 
 
 def reklaam_start(taust):
