@@ -10,7 +10,7 @@ def reklaam_start(taust):
     """Close the previous window and create a new one for the commercial.
 
     The previous window will be closed after the button is pressed. Pictures
-    are made for functions and functions are being called out for the commercial.
+    are made for functions and functions are called out for the commercial.
     """
     taust.destroy()
     aken = Tk()
