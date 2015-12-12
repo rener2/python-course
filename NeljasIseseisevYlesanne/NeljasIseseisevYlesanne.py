@@ -9,6 +9,9 @@ import random
 def reklaam_start(taust):
     """Closes the previous window and creates a new one for the commercial.
     Creates pictures of santa, snow and gifts.
+
+    The previous window will be closed after the button is pressed. Pictures
+    are made for functions and functions are being called out for the commercial.
     """
     taust.destroy()
     aken = Tk()
@@ -39,9 +42,7 @@ def pilve_pildid():
 
 
 def loo_pilv(aken, pildi_list, mitu_pilve):
-    """Create desired amount of clouds.
-    Call out function to make them move.
-    """
+    """Create desired amount of clouds and call out a function to make them move."""
     arv = 0
     pilve_koht_x = 0
     while mitu_pilve != arv:
@@ -68,9 +69,7 @@ def liiguta_pilve(pilv, positsioon_x, positsioon_y, kiirus, aken, pildi_list):
 
 
 def jouluvana(aken, vana_pilt):
-    """Create santa and a message.
-    Make both move with another function.
-    """
+    """Create santa, a message and make both move with another function."""
     vana = Canvas(aken, width=90, height=70, bg="blue", highlightthickness=0)
     vana.create_image(45, 35, image=vana_pilt)
     vana.pack()
@@ -91,9 +90,7 @@ def vana_liikuma(vana, positsioon_x, positsioon_y, tekst):
 
 
 def loo_lumi(aken, lume_pilt, kingi_pilt):
-    """Create new snow, gifts.
-    Make both move with another function.
-    """
+    """Create new snow, gifts and make both move with another function."""
     lumi = Canvas(aken, bg="Blue", highlightthickness=0, width=20, height=20)
     pilt = [lume_pilt, kingi_pilt]
     pilt = random.choice(pilt)
@@ -114,9 +111,7 @@ def lumesadu(aken, lumi, positsioon_x, positsioon_y):
 
 
 def nupp_start():
-    """Create a window and a button.
-    Start the commercial if button is clicked.
-     """
+    """Create a window and a button, starts the commercial if button is clicked."""
     taust = Tk()
     taust.title("Click me!")
     taust["bg"] = "black"
@@ -128,6 +123,7 @@ def nupp_start():
 
 
 def nupp_varv(button):
+    """Changes the color of the buttons background."""
     varvid = ("green", "orange", "grey", "white", "purple")
     varv = random.choice(varvid)
     button["bg"] = varv
