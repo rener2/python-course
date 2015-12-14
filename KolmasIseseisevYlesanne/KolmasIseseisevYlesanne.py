@@ -12,7 +12,8 @@ def valikvastus():
     if valik not in valikud: return valikvastus()
     #while valik not in valikud:
     #    valik = input("Sisestage soovitud valik (L, M, P, E): ").upper()
-    if valik in valikud:
+    
+    #if valik in valikud:
         #print()
     return valik
 
