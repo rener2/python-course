@@ -47,7 +47,7 @@ def muuda(muudetava_indeks):
     fail.close()
     fail = open("andmebaas.txt","w",encoding="utf-8")
     fail.write(sisu)
-    print("\tSademe kirje on uuendatud!")
+    print("\tSademe kirje on uuendatud!\n")
     fail.close()
     return valikvastus()
 
