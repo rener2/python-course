@@ -25,7 +25,7 @@ def lisa_salvesta():
     fail=open("andmebaas.txt","a",encoding="utf-8")
     fail.write(aeg+" - "+sisend+"\n")
     fail.close()
-    print("\tSade fikseeritud!")
+    print("\t\nSade fikseeritud!")
     return valikvastus()
 
 
