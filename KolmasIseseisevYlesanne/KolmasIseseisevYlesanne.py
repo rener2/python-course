@@ -8,10 +8,11 @@ def valikvastus():
     tagastab sisestatud väärtuse.
     """
     valikud = ("L", "M", "P", "E")
-    valik = input("Sisestage soovitud valik (L, M, P, E): ").upper()
-    if valik not in valikud:
-        return valikvastus()
-    elif valik in valikud:
+    valik = ""
+    print("")
+    while valik not in valikud:
+        valik = input("Sisestage soovitud valik (L, M, P, E): ").upper()
+    if valik in valikud:
         print("")
     return valik
 
@@ -24,13 +25,11 @@ def lisa_salvesta():
     if check_brackets(sisend) is False:
         return lisa_salvesta()
     if sisend.lower() == 'c':
-        print("")
         return valikvastus()
     fail = open("andmebaas.txt", "a", encoding="utf-8")
     fail.write(aeg+" - "+sisend+"\n")
     fail.close()
     print("\tSade fikseeritud!")
-    print("")
     return valikvastus()
 
 
@@ -40,7 +39,6 @@ def muuda(muudetava_indeks):
     if check_brackets(sisend) is False:
         return muuda(muudetava_indeks)
     if sisend.lower() == 'c':
-        print("")
         return valikvastus()
     sisend = aeg+" - "+sisend+"\n"
     fail = open("andmebaas.txt", "r", encoding="utf-8")
@@ -51,7 +49,7 @@ def muuda(muudetava_indeks):
     fail.close()
     fail = open("andmebaas.txt", "w", encoding="utf-8")
     fail.write(sisu)
-    print("\tSademe kirje on uuendatud!\n")
+    print("\tSademe kirje on uuendatud!")
     fail.close()
     return valikvastus()
 
@@ -74,7 +72,6 @@ def muuda_sadet():
     while sisend.isdigit() is False or int(sisend) > len(sisu) or int(sisend) < 1:
         sisend = input("\tSisestage sademe indeks, mida soovite muuta (C): ")
         if sisend.lower() == 'c':
-            print("")
             return valikvastus()
         if sisend.isdigit() is True:
             if int(sisend) < 1 or int(sisend) > len(sisu):
@@ -93,7 +90,6 @@ def kuva_sademeid():
     for i in sisu:
         print("\t\t"+i[:-1])
     fail.close()
-    print("")
     return valikvastus()
 
     
@@ -106,7 +102,6 @@ def sulge_programm():
         print("\tProgramm läks kinni!")
         sys.exit()
     else:
-        print("")
         return valikvastus()
 
 
@@ -147,7 +142,7 @@ def check_brackets(sentence):
 print("""L - Sademete lisamine andmebaasi.
 M - Andmebaasis oleva sademe muutmine.
 P - Andmebaasis asuvate sademete kuvamine.
-E - Programmi sulgemine.\n""")
+E - Programmi sulgemine.""")
 valik = valikvastus()
 while True:    
     if valik == 'L':
