@@ -8,12 +8,11 @@ def valikvastus():
     tagastab sisestatud väärtuse.
     """
     valikud = ("L", "M", "P", "E")
-    valik = ""
-    print("")
+    valik = input("\nSisestage soovitud valik (L, M, P, E): ").upper()
     while valik not in valikud:
         valik = input("Sisestage soovitud valik (L, M, P, E): ").upper()
     if valik in valikud:
-        print("")
+        print()
     return valik
 
 
@@ -66,7 +65,7 @@ def muuda_sadet():
     for i in sisu:
         print("\t\t{0}.{1}".format(arv, i[21:-1]))
         arv += 1
-    print("")
+    print()
     fail.close()
     sisend = ""
     while sisend.isdigit() is False or int(sisend) > len(sisu) or int(sisend) < 1:
