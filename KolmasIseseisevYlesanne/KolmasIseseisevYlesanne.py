@@ -13,7 +13,7 @@ def valikvastus():
     #while valik not in valikud:
     #    valik = input("Sisestage soovitud valik (L, M, P, E): ").upper()
     if valik in valikud:
-        print()
+        #print()
     return valik
 
 
@@ -21,7 +21,7 @@ def lisa_salvesta():
     """Funktsioon lisab anbmebaasi faili kasutaja sisestatud andmed, kui andmed
     on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni.
     """
-    sisend, aeg = input("\tFikseerige sade kujul [Identifikaator] [20] (C): "), strftime("%d.%m.%Y %H:%M:%S", localtime())
+    sisend, aeg = input("\t\nFikseerige sade kujul [Identifikaator] [20] (C): "), strftime("%d.%m.%Y %H:%M:%S", localtime())
     if check_brackets(sisend) is False:
         return lisa_salvesta()
     if sisend.lower() == 'c':
@@ -62,7 +62,7 @@ def muuda_sadet():
     fail = open("andmebaas.txt", "r+", encoding="utf-8")
     sisu = fail.readlines()
     arv = 1
-    print("\tAndmebaasis olevad andmed:")
+    print("\t\nAndmebaasis olevad andmed:")
     for i in sisu:
         print("\t\t{0}.{1}".format(arv, i[21:-1]))
         arv += 1
@@ -85,7 +85,7 @@ def kuva_sademeid():
     uuesti valikvastus() funktsiooni.
     """
     fail = open("andmebaas.txt", "r", encoding="utf-8")
-    print("\tAndmebaasi sisu:")
+    print("\t\nAndmebaasi sisu:")
     sisu = fail.readlines()
     for i in sisu:
         print("\t\t"+i[:-1])
@@ -97,7 +97,7 @@ def sulge_programm():
     """Funktsioon sulgeb programmi, juhul kui kasutaja seda soovib,
     kui ei soovi siis läheb uuesti valikvastus() funktsiooni.
     """
-    sisend = input("\tKas olete kindel, et soovite programmi sulgeda ('jah')? ")
+    sisend = input("\t\nKas olete kindel, et soovite programmi sulgeda ('jah')? ")
     if sisend.upper() == "JAH":
         print("\tProgramm läks kinni!")
         sys.exit()
