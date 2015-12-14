@@ -20,10 +20,10 @@ def lisa_salvesta():
     on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni.
     """
     sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
-    if sisend == 'C' or sisend == 'c':
-        return valikvastus()
     if check_brackets(sisend)==False:
         return lisa_salvesta()
+    if sisend.lower() == 'c':
+        return valikvastus()
     fail = open("andmebaas.txt","a",encoding="utf-8")
     fail.write(aeg+" - "+sisend+"\n")
     fail.close()
@@ -34,10 +34,10 @@ def lisa_salvesta():
 def muuda(muudetava_indeks):
     """Muudab andmebaasi sisu antud indeksi ja uue sisu järgi."""
     sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
-    if sisend == "C" or sisend == "c":
-        return valikvastus()
     if check_brackets(sisend) == False:
         return muuda(muudetava_indeks)
+    if sisend.lower() == 'c':
+        return valikvastus()
     sisend=aeg+" - "+sisend+"\n"
     fail = open("andmebaas.txt","r",encoding="utf-8")
     sisu=fail.readlines()
@@ -47,7 +47,7 @@ def muuda(muudetava_indeks):
     fail.close()
     fail = open("andmebaas.txt","w",encoding="utf-8")
     fail.write(sisu)
-    print("\tSademe kirje on uuendatud!\n")
+    print("\tSademe kirje on uuendatud!")
     fail.close()
     return valikvastus()
 
@@ -109,6 +109,7 @@ def check_brackets(sentence):
     bracket consists only of numbers.Furthermore return false
     if there is anything outside the brackets.
     """
+    if sentence.lower() == 'c': return True
     a=True
     b=True
     if sentence.count('[')!=2 or sentence.count(']')!=2:return False    
