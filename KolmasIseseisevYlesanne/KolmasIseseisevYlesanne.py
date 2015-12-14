@@ -5,7 +5,8 @@ from time import localtime, strftime
 
 def valikvastus():
     """Funktsioon laseb kasutajal valida 4 sisendi vahel ja 
-    tagastab sisestatud väärtuse"""
+    tagastab sisestatud väärtuse.
+	"""
     valikud=("L","M","P","E")        
     valik = input("\nSisestage soovitud valik (L, M, P, E): ")
     valik=valik.upper()
@@ -16,7 +17,8 @@ def valikvastus():
 
 def lisa_salvesta():
     """Funktsioon lisab anbmebaasi faili kasutaja sisestatud andmed, kui andmed
-    on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni"""
+    on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni.
+	"""
     sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
     if sisend == 'C' or sisend == 'c':return valikvastus()
     if check_brackets(sisend)==False: return lisa_salvesta()
@@ -28,7 +30,7 @@ def lisa_salvesta():
 
 
 def muuda(muudetava_indeks):
-    """Muudab andmebaasi sisu antud indeksi ja uue sisu järgi"""
+    """Muudab andmebaasi sisu antud indeksi ja uue sisu järgi."""
     sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
     if sisend == "C" or sisend == "c":return valikvastus()
     if check_brackets(sisend) == False: return muuda(muudetava_indeks)
@@ -49,7 +51,8 @@ def muuda(muudetava_indeks):
 def muuda_sadet(): 
     """Funktsioon kuvab kasutajale andmebaasi sisu indeksi järgi ja
     laseb kasutajal indeksi järgi andmebaasi sisu muuta muuda() funktsiooni
-    välja kutsudes. Lõpus käivitab uuesti valikvastus() funktsiooni"""
+    välja kutsudes. Lõpus käivitab uuesti valikvastus() funktsiooni.
+	"""
     fail = open("andmebaas.txt","r+",encoding="utf-8")
     sisu=fail.readlines()
     arv=1
@@ -73,7 +76,8 @@ def muuda_sadet():
 
 def kuva_sademeid():
     """Funktsioon avab faili ja kuvab selle sisu ridade kaupa, lõpus läheb
-    uuesti valikvastus() funktsiooni"""
+    uuesti valikvastus() funktsiooni.
+	"""
     fail=open("andmebaas.txt","r",encoding="utf-8")
     print("\tAndmebaasi sisu:")
     sisu=fail.readlines()
@@ -86,7 +90,8 @@ def kuva_sademeid():
     
 def sulge_programm():
     """Funktsioon sulgeb programmi, juhul kui kasutaja seda soovib,
-    kui ei soovi siis läheb uuesti valikvastus() funktsiooni"""
+    kui ei soovi siis läheb uuesti valikvastus() funktsiooni.
+	"""
     sisend=input("\tKas olete kindel, et soovite programmi sulgeda ('jah')? ")
     if sisend.upper()=="JAH":
         print("\tProgramm läks kinni!")
@@ -100,7 +105,8 @@ def check_brackets(sentence):
     brackets if not, returns False. Function returns true if inside
     of the first bracket consists of letters and the inside of the second
     bracket consists only of numbers.Furthermore functions returns false
-    if there is anything outside the brackets"""
+    if there is anything outside the brackets.
+	"""
     a=True
     b=True
     if sentence.count('[')<2 or sentence.count(']')<2:return False    
@@ -136,4 +142,4 @@ while True:
         valik=kuva_sademeid()
     elif valik == 'E':
         valik=sulge_programm()
-##
+
