@@ -111,14 +111,12 @@ def check_brackets(sentence):
     """
     a=True
     b=True
-    if sentence.count('[')!=2 or sentence.count(']')!=2:return False
-    if sentence.index['['] != 0: return False
-    esimeneP=0
+    if sentence.count('[')!=2 or sentence.count(']')!=2:return False    
+    esimeneP=sentence.index('[')
     esimeneV=sentence.index(']')
     if esimeneV<esimeneP:return False
     if sentence[esimeneV+1] != ' ': return False
     teineP=esimeneV+2
-    if sentence[teineP] != '[': return False
     teineV=sentence[esimeneV+2:].index(']')+teineP
     if teineV < teineP: return False
     if teineV+1 != len(sentence) or esimeneP != 0: return False   
