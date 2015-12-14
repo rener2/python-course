@@ -20,7 +20,7 @@ def lisa_salvesta():
     """Funktsioon lisab anbmebaasi faili kasutaja sisestatud andmed, kui andmed
     on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni.
     """
-    sisend, aeg = input("\tFikseerige sade kujul [Identifikaator] [20] (C):"), strftime("%d.%m.%Y %H:%M:%S", localtime())
+    sisend, aeg = input("\tFikseerige sade kujul [Identifikaator] [20] (C): "), strftime("%d.%m.%Y %H:%M:%S", localtime())
     if check_brackets(sisend) is False:
         return lisa_salvesta()
     if sisend.lower() == 'c':
