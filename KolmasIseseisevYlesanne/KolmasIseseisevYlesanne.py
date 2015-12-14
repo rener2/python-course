@@ -58,8 +58,7 @@ def muuda_sadet():
     arv=1
     print("\tAndmebaasis olevad andmed:")
     for i in sisu:
-        i=i[21:-1]#
-        print("\t\t{0}.{1}".format(arv,i)) 
+        print("\t\t{0}.{1}".format(arv,i[21:-1])) 
         arv+=1
     print("")
     fail.close()
@@ -82,7 +81,7 @@ def kuva_sademeid():
     print("\tAndmebaasi sisu:")
     sisu=fail.readlines()
     for i in sisu:
-        print("\t\t",i[:-1])
+        print("\t\t"+i[:-1])
     fail.close()
     return valikvastus()
 
