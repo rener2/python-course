@@ -34,7 +34,7 @@ def lisa_salvesta():
 
 def muuda(muudetava_indeks):
     """Muudab andmebaasi sisu antud indeksi ja uue sisu järgi."""
-    sisend, aeg = input("\t\nFikseerige sade kujul [Identifikaator] [20] (C): "), strftime("%d.%m.%Y %H:%M:%S", localtime())
+    sisend, aeg = input("\tFikseerige sade kujul [Identifikaator] [20] (C): "), strftime("%d.%m.%Y %H:%M:%S", localtime())
     if check_brackets(sisend) is False:
         return muuda(muudetava_indeks)
     if sisend.lower() == 'c':
