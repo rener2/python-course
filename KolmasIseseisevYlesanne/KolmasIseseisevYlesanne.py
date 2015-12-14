@@ -19,13 +19,15 @@ def lisa_salvesta():
     """Funktsioon lisab anbmebaasi faili kasutaja sisestatud andmed, kui andmed
     on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni.
     """
-    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
-    if sisend == 'C' or sisend == 'c':return valikvastus()
-    if check_brackets(sisend)==False: return lisa_salvesta()
+    sisend = ""
+    while check_brackets(sisend)== False:
+        sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
+        if sisend == 'C' or sisend == 'c':return valikvastus()
+    #if check_brackets(sisend)==False: return lisa_salvesta()
     fail=open("andmebaas.txt","a",encoding="utf-8")
     fail.write(aeg+" - "+sisend+"\n")
     fail.close()
-    print("\t\nSade fikseeritud!")
+    print("\tSade fikseeritud!")
     return valikvastus()
 
 
