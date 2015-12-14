@@ -19,12 +19,12 @@ def lisa_salvesta():
     """Funktsioon lisab anbmebaasi faili kasutaja sisestatud andmed, kui andmed
     on sisestatud nõutud kujul. Lõpus käivitab uuesti valivkastus() funktsiooni.
     """
-    sisend = ""
-    while check_brackets(sisend)== False:
-        sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
-        if sisend == 'C' or sisend == 'c':return valikvastus()
-    #if check_brackets(sisend)==False: return lisa_salvesta()
-    fail=open("andmebaas.txt","a",encoding="utf-8")
+    sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
+    if sisend == 'C' or sisend == 'c':
+        return valikvastus()
+    if check_brackets(sisend)==False:
+        return lisa_salvesta()
+    fail = open("andmebaas.txt","a",encoding="utf-8")
     fail.write(aeg+" - "+sisend+"\n")
     fail.close()
     print("\tSade fikseeritud!")
@@ -34,16 +34,18 @@ def lisa_salvesta():
 def muuda(muudetava_indeks):
     """Muudab andmebaasi sisu antud indeksi ja uue sisu järgi."""
     sisend,aeg=input("\tFikseerige sade kujul [Identifikaator] [20] (C): "),strftime("%d.%m.%Y %H:%M:%S", localtime())
-    if sisend == "C" or sisend == "c":return valikvastus()
-    if check_brackets(sisend) == False: return muuda(muudetava_indeks)
+    if sisend == "C" or sisend == "c":
+        return valikvastus()
+    if check_brackets(sisend) == False:
+        return muuda(muudetava_indeks)
     sisend=aeg+" - "+sisend+"\n"
-    fail=open("andmebaas.txt","r",encoding="utf-8")
+    fail = open("andmebaas.txt","r",encoding="utf-8")
     sisu=fail.readlines()
     sisu.pop(muudetava_indeks)
     sisu.insert(muudetava_indeks,sisend)
-    sisu="".join(sisu)
+    sisu = "".join(sisu)
     fail.close()
-    fail=open("andmebaas.txt","w",encoding="utf-8")
+    fail = open("andmebaas.txt","w",encoding="utf-8")
     fail.write(sisu)
     print("\tSademe kirje on uuendatud!")
     fail.close()
@@ -109,7 +111,7 @@ def check_brackets(sentence):
     """
     a=True
     b=True
-    if sentence.count('[')<2 or sentence.count(']')<2:return False    
+    if sentence.count('[')!=2 or sentence.count(']')!=2:return False    
     esimeneP=sentence.index('[')
     esimeneV=sentence.index(']')
     if esimeneV<esimeneP:return False
