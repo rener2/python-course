@@ -9,8 +9,9 @@ def valikvastus():
     """
     valikud = ("L", "M", "P", "E")
     valik = input("\nSisestage soovitud valik (L, M, P, E): ").upper()
-    while valik not in valikud:
-        valik = input("Sisestage soovitud valik (L, M, P, E): ").upper()
+    if valik not in valikud: return valikvastus()
+    #while valik not in valikud:
+    #    valik = input("Sisestage soovitud valik (L, M, P, E): ").upper()
     if valik in valikud:
         print()
     return valik
@@ -143,6 +144,7 @@ M - Andmebaasis oleva sademe muutmine.
 P - Andmebaasis asuvate sademete kuvamine.
 E - Programmi sulgemine.""")
 valik = valikvastus()
+
 while True:    
     if valik == 'L':
         valik = lisa_salvesta()
