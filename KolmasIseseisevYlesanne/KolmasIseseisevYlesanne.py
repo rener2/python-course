@@ -74,6 +74,8 @@ def muuda_sadet():
         if sisend.isdigit() is True:
             if int(sisend) < 1 or int(sisend) > len(sisu):
                 print("\t\tSisestatud sademe indeksit ei eksisteeri andmebaasis!")
+        if sisend[1:].isdigit() is True and sisend[0] == "-":
+            print("\t\tSisestatud sademe indeksit ei eksisteeri andmebaasis!")
     valjund = muuda(int(sisend)-1)
     return valjund
 
@@ -120,6 +122,8 @@ def check_brackets(sentence):
     if esimene_v < esimene_p:
         return False
     if sentence[esimene_v+1] != ' ':
+        return False
+    if sentence[esimene_p+1:esimene_v] == "":
         return False
     teine_p = esimene_v+2
     teine_v = sentence[esimene_v+2:].index(']')+teine_p
