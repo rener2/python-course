@@ -114,7 +114,7 @@ def nupp_start():
     taust = Tk()
     taust.title("Click me!")
     taust["bg"] = "black"
-    button = Button(taust, text="Tasuta reklaam!", relief="raised", command=lambda: reklaam_start(taust))
+    button = Button(taust, text="Tasuta reklaam!!", relief="raised", command=lambda: reklaam_start(taust))
     button.flash()
     button.pack(fill="both")
     nupp_varv(button)
