@@ -1,3 +1,4 @@
+"""This code displays a commercial."""
 __author__ = 'Rene Räkk'
 # -*- coding: utf-8 -*-
 
