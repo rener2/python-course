@@ -111,7 +111,7 @@ def lumesadu(aken, lumi, positsioon_x, positsioon_y):
 
 
 def nupp_start():
-    """Create a window and a button, starts the commercial if button is clicked."""
+    """Create a window and a button, start the commercial if button is clicked."""
     taust = Tk()
     taust.title("Click me!")
     taust["bg"] = "black"
