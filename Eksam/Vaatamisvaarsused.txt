@@ -1,0 +1,11 @@
+7	Petra	0
+11	Bora Bora	0
+5	Angkor Wat	1
+9	Iguazi kosk	1
+2	Sokotra saared	0
+12	Antiloobikanjon	0
+8	Puerto Princesa maa-alune jõgi	1
+3	Bagan	0
+10	Moraine'i järv	1
+4	Suur Hiina müür	1
+6	Yosemite rahvuspark	1
